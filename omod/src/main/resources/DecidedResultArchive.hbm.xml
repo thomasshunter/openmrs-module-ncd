@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2008 7:12:14 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.openmrs.module.ncd.database.DecidedResultArchive" table="ncd_decided_result_archive">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="dataType" type="string">
+            <column name="datatype" length="65535" />
+        </property>
+        <property name="resultCode" type="string">
+            <column name="resultcode" length="65535" />
+        </property>
+        <property name="resultValue" type="string">
+            <column name="resultvalue" length="65535" />
+        </property>
+        <property name="resultCount" type="java.lang.Integer">
+            <column name="resultcount" />
+        </property>
+        <property name="dateAdded" type="timestamp">
+            <column name="dateadded" length="19" />
+        </property>
+        <property name="dateClassified" type="timestamp">
+            <column name="dateclassified" length="19" />
+        </property>
+        <property name="classifiedByWhom" type="string">
+            <column name="classifiedbywhom" length="65535" />
+        </property>
+        <property name="conditionName" type="string">
+            <column name="conditionname" length="65535" />
+        </property>
+        <property name="lastModified" type="timestamp">
+            <column name="lastmodified" length="19" />
+        </property>
+        <property name="mpqSequenceNumber" type="string">
+            <column name="mpqsequencenumber" length="65535" />
+        </property>
+        <property name="obr" type="string">
+            <column name="obr" not-null="true" />
+        </property>
+        <property name="obrCodeSystem" type="string">
+        	<column name="obrCodeSystem" />
+        </property>
+        <property name="obrText" type="string">
+            <column name="obrtext" length="65535" />
+        </property>
+        <property name="obrAltText" type="string">
+            <column name="obrAltText" length="65535" />
+        </property>
+        <property name="obx" type="string">
+            <column name="obx" not-null="true" />
+        </property>
+        <property name="obxCodeSystem" type="string">
+        	<column name="obxCodeSystem" />
+        </property>
+        <property name="obxText" type="string">
+            <column name="obxtext" length="65535" />
+        </property>
+        <property name="obxAltText" type="string">
+            <column name="obxAltText" length="65535" />
+        </property>
+        <property name="nte" type="string">
+            <column name="nte" />
+        </property>
+        <property name="loincCode" type="string">
+            <column name="loinccode" length="65535" not-null="true" />
+        </property>
+        <property name="disposition" type="string">
+            <column name="disposition" length="65535" not-null="true" />
+        </property>
+        <property name="reportable" type="string">
+            <column name="reportable" length="65535" />
+        </property>
+        <many-to-one name="rawMessage" class="org.openmrs.module.ncd.database.RawMessage" fetch="select">
+            <column name="rawMessageid" />
+        </many-to-one>
+        <property name="manuallyReviewed" type="java.lang.Boolean">
+            <column name="manually_reviewed" />
+        </property>
+    </class>
+</hibernate-mapping>

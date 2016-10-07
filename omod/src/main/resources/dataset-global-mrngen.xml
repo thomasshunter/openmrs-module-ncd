@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dataset SYSTEM "dataset-ncd-schema.dtd">
+<dataset>
+  <global_property property="mrngen.database_version" property_value="1.2.11" description="DO NOT MODIFY.  Current database version number for the mrngen module."/>
+  <global_property property="mrngen.setup.complete" property_value="N" description="Flag representing whether the setup for MRN Generation is complete or not"/>
+  <global_property property="mrngen.setupComplete" property_value="Y" description=""/>
+  <global_property property="mrngen.started" property_value="true" description="DO NOT MODIFY. true/false whether or not the mrngen module has been started.  This is used to make sure modules that were running  prior to a restart are started again"/>
+  <mrn_sequence_response mrn_sequence_response_id="1" patient_identifier_type_id="1" lval="2000" prefix="Auto" setupcomplete="Y"/>
+  <mrn_sequence_response mrn_sequence_response_id="2" patient_identifier_type_id="2" lval="2000" prefix="Auto" setupcomplete="Y"/>
+</dataset>

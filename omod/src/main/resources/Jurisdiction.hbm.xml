@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="org.openmrs.module.ncd.database.Jurisdiction" table="ncd_jurisdiction">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<property name="jurisdiction" type="string">
+			<column name="jurisdiction" />
+		</property>
+		<set name="zipcodes" inverse="true">
+            <key>
+                <column name="countyid" not-null="true" />
+            </key>
+            <one-to-many class="org.openmrs.module.ncd.database.ZipCode" />
+        </set>
+	</class>
+</hibernate-mapping>

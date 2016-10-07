@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//OpenMRS//DTD OpenMRS Config 1.0//EN" "http://resources.openmrs.org/doctype/config-1.0.dtd">
+<module configVersion="1.0">
+	
+	<!-- Base Module Properties -->
+	<id>ncd</id>
+	<name>NCD</name>
+	<version>1.4</version>
+	<package>org.openmrs.module.ncd</package>
+	<author>Tom Hunter (1.4), John Brown, Erik Horstkotte, Andy Thorson (1.3)</author>
+	<description>
+			This module embeds a Notifiable Condition Detector (NCD) inside the 
+			OpenMRS instance as a separate server thread.  The NCD processes HL7
+			messages sent to a port specified by a global property, looking for messages
+			with segments that indicate medical conditions of interest to agencies such
+			as the CDC. For each such message segment, the NCD creates a Patient, an
+			Encounter, and a group of obs recording the details of the detected
+			condition.
+	</description>
+
+	<activator>org.openmrs.module.ncd.NCDActivator</activator>
+	
+	<!-- <updateURL>https://dev.openmrs.org/modules/download/ncd/update.rdf</updateURL> -->
+	<!-- /Base Module Properties -->
+	
+	<require_version>1.12.0</require_version>
+	<!--  require_version>1.5.0.10342</require_version-->
+	<require_modules>
+		<!-- We need the mrngen module, to automatically generate patient identifiers -->
+   		<require_module>org.openmrs.module.mrngen</require_module>
+	</require_modules>
+	
+	<!-- Extensions --> 
+	<extension>
+		<point>org.openmrs.admin.list</point>
+		<class>org.openmrs.module.ncd.extension.html.AdminList</class>
+	</extension>
+	
+	<!-- AOP
+	<advice>
+		<point>org.openmrs.api.FormService</point>
+		<class>@MODULE_PACKAGE@.advice.DuplicateFormAdvisor</class>
+	</advice>
+	 /AOP -->
+	
+	<!-- Keep NCDConstants.java in sync with this list -->
+	<privilege>
+		<name>Add NCD Codes</name>
+		<description>Able to add NCD Codes, Code Systems and Code Types</description>
+	</privilege>
+
+	<privilege>
+		<name>Delete NCD Codes</name>
+		<description>Able to delete NCD Codes, Code Systems and Code Types</description>
+	</privilege>
+
+	<privilege>
+		<name>Edit NCD Codes</name>
+		<description>Able to modify NCD Codes, Code Systems and Code Types</description>
+	</privilege>
+
+	<privilege>
+		<name>View NCD Codes</name>
+		<description>Able to view NCD Codes, Code Systems and Code Types</description>
+	</privilege>
+	
+	<privilege>
+		<name>Add NCD Conditions</name>
+		<description>Able to add NCD Conditions and Condition Groups</description>
+	</privilege>
+
+	<privilege>
+		<name>Delete NCD Conditions</name>
+		<description>Able to delete NCD Conditions and Condition Groups</description>
+	</privilege>
+
+	<privilege>
+		<name>Edit NCD Conditions</name>
+		<description>Able to modify NCD Conditions and Condition Groups</description>
+	</privilege>
+
+	<privilege>
+		<name>View NCD Conditions</name>
+		<description>Able to view NCD Conditions and Condition Groups</description>
+	</privilege>
+	
+	<privilege>
+		<name>Add NCD NLP Contexts</name>
+		<description>Able to add NCD NLP Contexts</description>
+	</privilege>
+	
+	<privilege>
+		<name>Delete NCD NLP Contexts</name>
+		<description>Able to delete NCD NLP Contexts</description>
+	</privilege>
+	
+	<privilege>
+		<name>Edit NCD NLP Contexts</name>
+		<description>Able to edit NCD NLP Contexts</description>
+	</privilege>
+	
+	<privilege>
+		<name>View NCD NLP Contexts</name>
+		<description>Able to view NCD NLP Contexts</description>
+	</privilege>
+
+	<privilege>
+		<name>Add NCD Critics</name>
+		<description>Able to add NCD Critics</description>
+	</privilege>
+
+	<privilege>
+		<name>Delete NCD Critics</name>
+		<description>Able to delete NCD Critics</description>
+	</privilege>
+
+	<privilege>
+		<name>Edit NCD Critics</name>
+		<description>Able to edit NCD Critics</description>
+	</privilege>
+
+	<privilege>
+		<name>View NCD Critics</name>
+		<description>Able to view NCD Critics</description>
+	</privilege>
+
+	<privilege>
+		<name>View NCD Dashboard</name>
+		<description>Able to view the NCD Dashboard page</description>
+	</privilege>
+
+	<privilege>
+		<name>Add NCD Decided Results</name>
+		<description>Able to add NCD Decided Results</description>
+	</privilege>
+
+	<privilege>
+		<name>Delete NCD Decided Results</name>
+		<description>Able to delete NCD Decided Results</description>
+	</privilege>
+
+	<privilege>
+		<name>Edit NCD Decided Results</name>
+		<description>Able to edit NCD Decided Results</description>
+	</privilege>
+
+	<privilege>
+		<name>View NCD Decided Results</name>
+		<description>Able to view NCD Decided Results</description>
+	</privilege>
+
+	<privilege>
+		<name>Add NCD Reportable Results</name>
+		<description>Able to add NCD Reportable Results</description>
+	</privilege>
+
+	<privilege>
+		<name>Delete NCD Reportable Results</name>
+		<description>Able to delete NCD Reportable Results</description>
+	</privilege>
+
+	<privilege>
+		<name>Edit NCD Reportable Results</name>
+		<description>Able to edit NCD Reportable Results</description>
+	</privilege>
+
+	<privilege>
+		<name>View NCD Reportable Results</name>
+		<description>Able to view NCD Reportable Results</description>
+	</privilege>
+
+	<privilege>
+		<name>Add NCD Scheduled Reports</name>
+		<description>Able to add NCD Scheduled Reports</description>
+	</privilege>
+
+	<privilege>
+		<name>Delete NCD Scheduled Reports</name>
+		<description>Able to delete NCD Scheduled Reports</description>
+	</privilege>
+
+	<privilege>
+		<name>Edit NCD Scheduled Reports</name>
+		<description>Able to edit NCD Scheduled Reports</description>
+	</privilege>
+
+	<privilege>
+		<name>View NCD Scheduled Reports</name>
+		<description>Able to view NCD Scheduled Reports</description>
+	</privilege>
+
+	<privilege>
+		<name>Add NCD Alerts</name>
+		<description>Able to add NCD Alerts</description>
+	</privilege>
+
+	<privilege>
+		<name>Delete NCD Alerts</name>
+		<description>Able to delete NCD Alerts</description>
+	</privilege>
+
+	<privilege>
+		<name>Edit NCD Alerts</name>
+		<description>Able to edit NCD Alerts</description>
+	</privilege>
+
+	<privilege>
+		<name>View NCD Alerts</name>
+		<description>Able to view NCD Alerts</description>
+	</privilege>
+	
+	<privilege>
+		<name>Add NCD Entities</name>
+		<description>Able to add NCD Entities</description>
+	</privilege>
+
+	<privilege>
+		<name>Delete NCD Entities</name>
+		<description>Able to delete NCD Entities</description>
+	</privilege>
+
+	<privilege>
+		<name>Edit NCD Entities</name>
+		<description>Able to edit NCD Entities</description>
+	</privilege>
+
+	<privilege>
+		<name>View NCD Entities</name>
+		<description>Able to view NCD Entities</description>
+	</privilege>
+	
+	<privilege>
+		<name>Add NCD Errors</name>
+		<description>Able to add NCD Error</description>
+	</privilege>
+
+	<privilege>
+		<name>Delete NCD Errors</name>
+		<description>Able to delete NCD Errors</description>
+	</privilege>
+
+	<privilege>
+		<name>Edit NCD Errors</name>
+		<description>Able to edit NCD Errors</description>
+	</privilege>
+
+	<privilege>
+		<name>View NCD Errors</name>
+		<description>Able to view NCD Errors</description>
+	</privilege>
+	
+	<privilege>
+		<name>Add NCD Monitored Codes</name>
+		<description>Able to add NCD Monitored Codes</description>
+	</privilege>
+
+	<privilege>
+		<name>Delete NCD Monitored Codes</name>
+		<description>Able to delete NCD Monitored Codes</description>
+	</privilege>
+
+	<privilege>
+		<name>Edit NCD Monitored Codes</name>
+		<description>Able to edit NCD Monitored Codes</description>
+	</privilege>
+
+	<privilege>
+		<name>View NCD Monitored Codes</name>
+		<description>Able to view NCD Monitored Codes</description>
+	</privilege>
+	
+	<privilege>
+		<name>Add NCD Message Counts</name>
+		<description>Able to add NCD Message Counts</description>
+	</privilege>
+	
+	<privilege>
+		<name>Reset NCD Message Counts</name>
+		<description>Able to reset NCD Message Counts</description>
+	</privilege>
+	
+	<privilege>
+		<name>View NCD Message Counts</name>
+		<description>Able to view NCD Message Counts</description>
+	</privilege>
+
+    <privilege>
+		<name>Add NCD HL7 Producers</name>
+		<description>Able to add NCD HL7 Producers</description>
+	</privilege>
+    <privilege>
+		<name>Delete NCD HL7 Producers</name>
+		<description>Able to delete NCD HL7 Producers</description>
+	</privilege>
+    <privilege>
+		<name>Edit NCD HL7 Producers</name>
+		<description>Able to modify NCD HL7 Producers</description>
+	</privilege>
+    <privilege>
+		<name>View NCD HL7 Producers</name>
+		<description>Able to view NCD HL7 Producers</description>
+	</privilege>
+    <privilege>
+		<name>Add NCD Institutions</name>
+		<description>Able to add NCD Institutions</description>
+	</privilege>
+    <privilege>
+		<name>Delete NCD Institutions</name>
+		<description>Able to delete NCD Institutions</description>
+	</privilege>
+    <privilege>
+		<name>Edit NCD Institutions</name>
+		<description>Able to modify NCD Institutions</description>
+	</privilege>
+    <privilege>
+		<name>View NCD Institutions</name>
+		<description>Able to view NCD Institutions</description>
+	</privilege>
+    
+	<!-- Required Global Properties -->
+	<globalProperty>
+		<property>ncd.username</property>
+		<defaultValue>admin</defaultValue>
+		<description>
+			The name of the OpenMRS user as whom the NCD processor will run.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.password</property>
+		<defaultValue>test</defaultValue>
+		<description>
+			The password for the OpenMRS user as whom the NCD processor will run.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.listenerPort</property>
+		<defaultValue>7093</defaultValue>
+		<description>
+			The TCP port to which the HL7 message processor should listen for
+			incoming connections.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.matchThreshold</property>
+		<defaultValue>100</defaultValue>
+		<description>
+			The longest common substring matching threshold, as a percentage.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.enableNTEprocessing</property>
+		<defaultValue>true</defaultValue>
+		<description>
+			True to enable NTE segment processing, false to disable it.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.loincFrequencyCacheSize</property>
+		<defaultValue>25000</defaultValue>
+		<description>
+			The maximum size of the (loinc, facility) frequency cache.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.messageCritics</property>
+		<defaultValue>org.openmrs.module.ncd.critic.MessageTypeCritic,org.openmrs.module.ncd.critic.ApplicationFacilityFilteringCritic</defaultValue>
+		<description>
+			The comma separated list of message critic class names to be loaded.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.resultsCritics</property>
+		<defaultValue>org.openmrs.module.ncd.critic.ReportAllCritic,org.openmrs.module.ncd.critic.DecidedResultCritic,org.openmrs.module.ncd.critic.NlpCritic,org.openmrs.module.ncd.critic.Icd9InObxCritic,org.openmrs.module.ncd.critic.ReportableConditionCritic,org.openmrs.module.ncd.critic.AbnormalFlagCritic</defaultValue>
+		<description>
+			The comma separated list of results critic class names to be loaded.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.resultFinderMap</property>
+		<defaultValue>InterestingResultFinder=org.openmrs.module.ncd.InterestingResultFinder</defaultValue>
+		<description>
+			The comma separated list of name=class name pairs to be loaded as result finders.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.candidateSegmentNames</property>
+		<defaultValue>OBX,DG1</defaultValue>
+		<description>
+			The comma separated list of HL7 message segment names the CandidateResultFinder will scan for candidate results.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.allowableMessageTypes</property>
+		<defaultValue>ORUR01,ORUR03,ADTA01</defaultValue>
+		<description>
+			The comma separated list of HL7 message types to accepted by the
+			MessageTypeCritic (if used).
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.allowableProcessingIds</property>
+		<defaultValue>P</defaultValue>
+		<description>
+			The comma separated list of processing ids to be accepted by the
+			ProcessingIdCritic (if used).
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.negationStrings</property>
+		<defaultValue>NO,NOT,NEG,NEGATIVE,NORMAL,INTERMEDIATE</defaultValue>
+		<description>
+			The comma separated list of negation strings to search for in test results to
+			indicate a negative result.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.reportableAbnormalFlags</property>
+		<defaultValue>a,A,aa,AA,h,H,hh,HH</defaultValue>
+		<description>
+			The comma separated list of reportable abnormal result flags (OBX.8) used by
+			the AbnormalFlagCritic, if it is used. Reportable flags always override
+			not-reportable flags.  So if a flag appears in both lists, it will be reported.
+			NOTE - the flags are case-sensitive, so if you have "A" in the list, "a" will
+			not be a reportable abnormal flag. 
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.notReportableAbnormalFlags</property>
+		<defaultValue>N,n</defaultValue>
+		<description>
+			The comma separated list of non-reportable abnormal result flags (OBX.8) used
+			by the AbnormalFlagCritic, if it is used. NOTE - the flags are case-sensitive, 
+			so if you have "A" in the list, "a" will not also be an not-reportable abnormal flag.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.nlpAnalyzers</property>
+		<defaultValue>text=org.openmrs.module.ncd.nlp.NlpTextAnalyzer,discrete=org.openmrs.module.ncd.nlp.NlpDiscreteAnalyzer,numeric=org.openmrs.module.ncd.nlp.NlpNumericAnalyzer</defaultValue>
+		<description>
+			The name of the analyzer class used by RexCritic.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.conceptVersion</property>
+		<defaultValue>0.0</defaultValue>
+		<description>
+			DO NOT MODIFY.  The current installed version of the module specific concepts.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.reportableResultSeq</property>
+		<defaultValue>1</defaultValue>
+		<description>
+		  The reportable result sequence number for the next recorded
+		  reportable result.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.debug</property>
+		<defaultValue>false</defaultValue>
+		<description>
+		  Set to true to run the NCD in debug mode. Set to false for production mode.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.jurisdictionAlgorithm</property>
+		<defaultValue>org.openmrs.module.ncd.jurisdiction.DefaultJurisdictionAlgorithm</defaultValue>
+		<description>
+		  Set to true to run the NCD in debug mode. Set to false for production mode.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.sentInErrorSender</property>
+		<defaultValue>no_reply@nowhere.com</defaultValue>
+		<description>
+			The sender email address to be used for the "sent in error" notification
+			email when a user flags a reportable result as sent in error.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.sentInErrorSubject</property>
+		<defaultValue>[NCD] Reportable results sent in error</defaultValue>
+		<description>
+			The subject to be used for the "sent in error" notification email when
+			a user flags a reportable result as sent in error.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.maxTaskRunStatusAge</property>
+		<defaultValue>365</defaultValue>
+		<description>
+			The maximum period (in days) to keep task run status history.  Data older
+			than this is periodically deleted by a background pruning task (if 
+			configured and enabled).
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.messagePreProcessors</property>
+		<defaultValue>org.openmrs.module.ncd.preprocessing.MakeValidMSH2,org.openmrs.module.ncd.preprocessing.MakeValidMSH9,org.openmrs.module.ncd.preprocessing.FixEmptyMSH12,org.openmrs.module.ncd.preprocessing.RemoveFourLetterSegmentNames,org.openmrs.module.ncd.preprocessing.MPQGenerator,org.openmrs.module.ncd.preprocessing.TransformOBX2DataType,org.openmrs.module.ncd.preprocessing.FixEmptyOBX2,org.openmrs.module.ncd.preprocessing.FixBareNte,org.openmrs.module.ncd.preprocessing.TransformEmbeddedCarriageReturns</defaultValue>
+		<description>
+			The comma-separated list of MessagePreProcessor classes that will be used to pre-process the message
+			to do all that is possible to ensure the message can be parsed.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.dataTypeTransforms</property>
+		<defaultValue>RP=ST,XCN=TX,PL=TX</defaultValue>
+		<description>
+			A comma-separated list with elements of the form 'original data type=new data type', such that any instances
+			of an OBX segment with the original data type will have that data type changed to the new data type.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>ncd.resultSegmentMap</property>
+		<defaultValue>OBX=org.openmrs.module.ncd.model.Observation,DG1=org.openmrs.module.ncd.model.Diagnosis</defaultValue>
+		<description>
+			A comma-separated list with elements of the form 'result segment name=class name of the model class'.  
+			For instance, "OBX=org.openmrs.module.ncd.model.Observation" will assign the Observation class to
+			model the OBX segments.  The model classes are used to more easily extract information from a
+			result segment.  Note, this configuration item is intended for developers and other advanced users.
+		</description>
+	</globalProperty>	
+	<globalProperty>
+		<property>ncd.messageTypeTransforms</property>
+		<defaultValue>ORU_R99=ORU_R01,ORU_O01=ORU_R01,ADT_Z=ADT_A,ORM=ORM_O01,ORU=ORU_R01</defaultValue>
+		<description>
+			A comma-separated list with elements of the form 'original message type=new message type'.
+			For instance, "ORU_R99=ORU_R01" will transform all messages of type ORU^R99 to ORU^R01,
+			using the specified component separator (shown as "^" here).  Use this configuration
+			item if you are receiving lots of parsing errors due to DOMException and the messages
+			generating the errors have a non-standard message type.  You could then add a configuration
+			entry to this property to transform the non-standard message type into one that is
+			more standard (and thus more likely to be parsed).  More general elements such as
+			"ORU=ORU_R01" need to appear after more specific elements such as "ORU_R99=ORU_R01".
+		</description>
+	</globalProperty>
+
+	<!--
+	<dwr>
+		<allow>
+			<create creator="new" javascript="DWRFormEntryService">
+				<param name="class" value="org.openmrs.module.ncd.web.DWRFormEntryService"/>
+				<include method="enterForm"/>
+			</create>
+		</allow>
+
+		<signatures>
+			<![CDATA[
+			import @MODULE_PACKAGE@.web.DWRFormEntryService;
+			DWRFormEntryService.enterForm(Integer patientId, Integer formId, boolean useEncounter, List<String> fields);
+			]]>
+		</signatures>	
+	</dwr>
+	-->
+	
+	<!-- Servlets -->
+	<!-- Accessed through the url /pageContext()/moduleServlet/<moduleId>/<servlet-name> 
+	<servlet>
+		<servlet-name>formDownload</servlet-name>
+		<servlet-class>@MODULE_PACKAGE@.web.FormDownloadServlet</servlet-class>
+	</servlet>
+	-->
+	<!-- /Servlets -->
+	
+	
+	<!-- Internationalization -->
+	<!-- All message codes should start with ncd.* -->
+	<messages>
+		<lang>en</lang>
+		<file>messages.properties</file>
+	</messages>
+	<messages>
+		<lang>fr</lang>
+		<file>messages_fr.properties</file>
+	</messages>
+	<messages>
+		<lang>es</lang>
+		<file>messages_es.properties</file>
+	</messages>
+	<!-- /Internationalization -->
+
+  <mappingFiles>
+	AlertSummary.hbm.xml
+	AlertType.hbm.xml
+	Code.hbm.xml
+	CodeCondition.hbm.xml
+	CodeFrequency.hbm.xml
+	CodeSystem.hbm.xml
+	CodeType.hbm.xml
+	Condition.hbm.xml
+	ConditionGroup.hbm.xml
+	County.hbm.xml
+	CriticDef.hbm.xml
+	CriticType.hbm.xml
+	DecidedResult.hbm.xml
+	DecidedResultArchive.hbm.xml
+	Error.hbm.xml
+	ExportedResult.hbm.xml
+	ExportRecipient.hbm.xml
+	HL7Producer.hbm.xml
+	Institution.hbm.xml
+	Jurisdiction.hbm.xml
+	ManualReviewStatusType.hbm.xml
+	MessageCountSummary.hbm.xml
+	MonitoredCondition.hbm.xml
+	NlpCriticConcept.hbm.xml
+	NlpCriticContext.hbm.xml
+	NlpCriticContextGroup.hbm.xml
+	NlpCriticContextType.hbm.xml
+	NlpDiscreteTerm.hbm.xml
+	ProcessedMessageCount.hbm.xml
+	RawMessage.hbm.xml
+	ReportableResult.hbm.xml
+	ReportingCriterion.hbm.xml
+    TaskRunStatus.hbm.xml
+    ZeroCountElement.hbm.xml
+    ZeroCountUniverse.hbm.xml
+	ZipCode.hbm.xml
+  </mappingFiles>	
+</module>

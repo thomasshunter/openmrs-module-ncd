@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2008 7:12:14 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.openmrs.module.ncd.database.ReportableResult" table="ncd_reportable_result">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="code" class="org.openmrs.module.ncd.database.Code" fetch="select">
+            <column name="loinccodeid" />
+        </many-to-one>
+        <many-to-one name="previousReportableResult" class="org.openmrs.module.ncd.database.ReportableResult" fetch="select">
+            <column name="previousreportableresultid" />
+        </many-to-one>
+        <many-to-one name="institution" class="org.openmrs.module.ncd.database.Institution" fetch="select">
+            <column name="institutionid" />
+        </many-to-one>
+        <many-to-one name="rawMessage" class="org.openmrs.module.ncd.database.RawMessage" fetch="select">
+            <column name="rawhl7id" />
+        </many-to-one>
+        <many-to-one name="producer" class="org.openmrs.module.ncd.database.HL7Producer" fetch="select">
+            <column name="applicationfacilityid" />
+        </many-to-one>
+        <many-to-one name="county" class="org.openmrs.module.ncd.database.County" fetch="select">
+        	<column name="countyid" />
+        </many-to-one>
+        <many-to-one name="jurisdiction" class="org.openmrs.module.ncd.database.Jurisdiction" fetch="select">
+        	<column name="jurisdictionid" />
+        </many-to-one>
+        <many-to-one name="critic" class="org.openmrs.module.ncd.database.CriticDef" fetch="select">
+        	<column name="indicatingCriticId" />
+        </many-to-one>
+        <many-to-one name="decidedResult" class="org.openmrs.module.ncd.database.DecidedResultArchive" fetch="select">
+        	<column name="decidedResultId" />
+        </many-to-one>
+        <many-to-one name="manualReviewStatusType" class="org.openmrs.module.ncd.database.ManualReviewStatusType" fetch="select">
+        	<column name="reviewStatusTypeId" not-null="true" />
+        </many-to-one>
+        <property name="institutionIdType" type="string">
+            <column name="institutionidtype" length="2" />
+        </property>
+        <property name="patientInstitutionMedicalRecordId" type="string">
+            <column name="patientinstitutionmedicalrecordid" length="65535" />
+        </property>
+        <property name="globalPatientId" type="string">
+            <column name="globalpatientid" length="65535" />
+        </property>
+        <property name="patientSSN" type="string">
+            <column name="patientssn" length="65535" />
+        </property>
+        <property name="patientName" type="string">
+            <column name="patientname" length="65535" />
+        </property>
+        <property name="patientBirth" type="date">
+            <column name="patientbirth" length="10" />
+        </property>
+        <property name="patientRace" type="string">
+            <column name="patientrace" length="16" />
+        </property>
+        <property name="patientPhone" type="string">
+            <column name="patientphone" length="65535" />
+        </property>
+        <property name="patientStreet1" type="string">
+            <column name="patientstreet1" length="65535" />
+        </property>
+        <property name="patientStreet2" type="string">
+            <column name="patientstreet2" length="65535" />
+        </property>
+        <property name="patientCity" type="string">
+            <column name="patientcity" length="65535" />
+        </property>
+        <property name="patientCounty" type="string">
+            <column name="patientcounty" length="65535" />
+        </property>
+        <property name="patientState" type="string">
+            <column name="patientstate" length="65535" />
+        </property>
+        <property name="patientZip" type="string">
+            <column name="patientzip" length="65535" />
+        </property>
+        <property name="patientCountry" type="string">
+            <column name="patientcountry" length="65535" />
+        </property>
+        <property name="providerName" type="string">
+            <column name="providername" length="65535" />
+        </property>
+        <property name="providerNameMatched" type="string">
+            <column name="providernamematched" length="65535" />
+        </property>
+        <property name="providerSSN" type="string">
+            <column name="providerssn" length="65535" />
+        </property>
+        <property name="providerBirth" type="timestamp">
+            <column name="providerbirth" length="19" />
+        </property>
+        <property name="providerPractice" type="string">
+            <column name="providerpractice" length="65535" />
+        </property>
+        <property name="providerStreet" type="string">
+            <column name="providerstreet" length="65535" />
+        </property>
+        <property name="providerCity" type="string">
+            <column name="providercity" length="65535" />
+        </property>
+        <property name="providerState" type="string">
+            <column name="providerstate" length="65535" />
+        </property>
+        <property name="providerZip" type="string">
+            <column name="providerzip" length="65535" />
+        </property>
+        <property name="providerCounty" type="string">
+            <column name="providercounty" length="65535" />
+        </property>
+        <property name="providerPhone" type="string">
+            <column name="providerphone" length="65535" />
+        </property>
+        <property name="providerLocalId" type="string">
+            <column name="providerlocalid" length="65535" />
+        </property>
+        <property name="providerDEANumber" type="string">
+            <column name="providerdeanumber" length="65535" />
+        </property>
+        <property name="providerLicense" type="string">
+            <column name="providerlicense" length="65535" />
+        </property>
+        <property name="labName" type="string">
+            <column name="labname" length="65535" />
+        </property>
+        <property name="labId" type="string">
+            <column name="labid" length="65535" />
+        </property>
+        <property name="labPhone" type="string">
+            <column name="labphone" length="65535" />
+        </property>
+        <property name="labStreet1" type="string">
+            <column name="labstreet1" length="65535" />
+        </property>
+        <property name="labStreet2" type="string">
+            <column name="labstreet2" length="65535" />
+        </property>
+        <property name="labCity" type="string">
+            <column name="labcity" length="65535" />
+        </property>
+        <property name="labState" type="string">
+            <column name="labstate" length="65535" />
+        </property>
+        <property name="labZip" type="string">
+            <column name="labzip" length="65535" />
+        </property>
+        <property name="testId" type="string">
+            <column name="testid" length="65535" />
+        </property>
+        <property name="testName" type="string">
+            <column name="testname" length="65535" />
+        </property>
+        <property name="testCodeSystem" type="string">
+            <column name="testcodesys" length="65535" />
+        </property>
+        <property name="testPlacerOrderNum" type="string">
+            <column name="testplacerordernum" length="65535" />
+        </property>
+        <property name="testFillerOrderNum" type="string">
+            <column name="testfillerordernum" length="65535" />
+        </property>
+        <property name="testDate" type="timestamp">
+            <column name="testdate" length="19" />
+        </property>
+        <property name="testParentPlacer" type="string">
+            <column name="testparentplacer" length="65535" />
+        </property>
+        <property name="testParentFiller" type="string">
+            <column name="testparentfiller" length="65535" />
+        </property>
+        <property name="testSpecimenText" type="string">
+            <column name="testspecimentext" length="65535" />
+        </property>
+        <property name="testDataType" type="string">
+            <column name="testdatatype" length="3" />
+        </property>
+        <property name="testNormalRange" type="string">
+            <column name="testnormalrange" length="65535" />
+        </property>
+        <property name="testAbnormalFlag" type="string">
+            <column name="testabnormalflag" length="2" />
+        </property>
+        <property name="testComment" type="string">
+            <column name="testcomment" />
+        </property>
+        <property name="messageReceivedDateTime" type="timestamp">
+            <column name="testrcvddatetime" length="19" />
+        </property>
+        <property name="mpqSeqNumber" type="string">
+            <column name="testmpqseqnumber" length="65535" />
+        </property>
+        <property name="testResultId" type="string">
+            <column name="testresultid" length="65535" />
+        </property>
+        <property name="testResultName" type="string">
+            <column name="testresultname" length="65535" />
+        </property>
+        <property name="testResultCodeSystem" type="string">
+            <column name="testresultcodesys" length="65535" />
+        </property>
+        <property name="testResultSubId" type="string">
+            <column name="testresultsubid" length="65535" />
+        </property>
+        <property name="testResultCode" type="string">
+            <column name="testresultcode" length="65535" />
+        </property>
+        <property name="testResultValue" type="string">
+            <column name="testresultvalue" />
+        </property>
+        <property name="testResultUnits" type="string">
+            <column name="testresultunits" length="65535" />
+        </property>
+        <property name="testPreviousDate" type="timestamp">
+            <column name="testpreviousdate" length="19" />
+        </property>
+        <property name="conditionName" type="string">
+            <column name="conditionname" length="65535" />
+        </property>
+        <property name="obrAltCode" type="string">
+            <column name="obraltcode" length="65535" />
+        </property>
+        <property name="obrAltCodeText" type="string">
+            <column name="obraltcodetext" length="65535" />
+        </property>
+        <property name="obrAltCodeSystem" type="string">
+            <column name="obraltcodesys" length="65535" />
+        </property>
+        <property name="obxAltCode" type="string">
+            <column name="obxaltcode" length="65535" />
+        </property>
+        <property name="obxAltCodeText" type="string">
+            <column name="obxaltcodetext" length="65535" />
+        </property>
+        <property name="obxAltCodeSystem" type="string">
+            <column name="obxaltcodesys" length="65535" />
+        </property>
+        <property name="providerNameSource" type="string">
+            <column name="providernamesource" length="65535" />
+        </property>
+        <property name="providerAddressSource" type="string">
+            <column name="provideraddresssource" length="65535" />
+        </property>
+        <property name="providerLocalIdSource" type="string">
+            <column name="providerlocalidsource" length="65535" />
+        </property>
+        <property name="testDateSource" type="string">
+            <column name="testdatesource" length="65535" />
+        </property>
+        <property name="testPlacerOrderNumSource" type="string">
+            <column name="testplacerordernumsource" length="65535" />
+        </property>
+        <property name="testFillerOrderNumSource" type="string">
+            <column name="testfillerordernumsource" length="65535" />
+        </property>
+        <property name="facilityId" type="string">
+            <column name="facilityid" length="65535" />
+        </property>
+        <property name="patientSex" type="java.lang.Character">
+            <column name="patientsex" length="1" />
+        </property>
+        <property name="testResultStatus" type="java.lang.Character">
+            <column name="testresultstatus" length="1" />
+        </property>
+        <property name="resultSeq" type="java.lang.Long">
+            <column name="resultSeq" />
+        </property>
+        <property name="obrSetId" type="java.lang.Integer">
+        	<column name="obrSetId" />
+        </property>
+        <property name="obxStartSetId" type="java.lang.Integer">
+        	<column name="obxStartSetId" />
+        </property>
+        <property name="obxEndSetId" type="java.lang.Integer">
+        	<column name="obxEndSetId" />
+        </property>        
+        <property name="sendingApplication" type="java.lang.String">
+        	<column name="sendingApplication" />
+        </property>
+        <property name="sendingFacility" type="java.lang.String">
+        	<column name="sendingFacility" />
+        </property>
+        <property name="sendingLocation" type="java.lang.String">
+        	<column name="sendingLocation" />
+        </property>
+        <property name="releaseDate" type="timestamp">
+            <column name="releaseDate" length="19" />
+        </property>
+        <property name="encounterId" type="java.lang.Long">
+            <column name="encounterId" />
+        </property>
+        <property name="sentInError" type="java.lang.Boolean">
+            <column name="sentInError" />
+        </property>
+        <property name="criticDisplay" type="string">
+            <column name="criticDisplay" length="65535" />
+        </property>
+        <property name="codeDisplay" type="string">
+            <column name="codeDisplay" length="65535" />
+        </property>
+        <set name="nextReportableResults" inverse="true">
+            <key>
+                <column name="previousreportableresultid" />
+            </key>
+            <one-to-many class="org.openmrs.module.ncd.database.ReportableResult" />
+        </set>
+    </class>
+</hibernate-mapping>

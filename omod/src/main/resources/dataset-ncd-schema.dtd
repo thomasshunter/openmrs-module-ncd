@@ -1,0 +1,1482 @@
+<!ELEMENT dataset (
+    cohort*,
+    cohort_member*,
+    complex_obs*,
+    concept*,
+    concept_answer*,
+    concept_class*,
+    concept_datatype*,
+    concept_derived*,
+    concept_map*,
+    concept_name*,
+    concept_numeric*,
+    concept_proposal*,
+    concept_set*,
+    concept_set_derived*,
+    concept_source*,
+    concept_state_conversion*,
+    concept_synonym*,
+    concept_word*,
+    drug*,
+    drug_ingredient*,
+    drug_order*,
+    encounter*,
+    encounter_type*,
+    ext_mrn_log*,
+    field*,
+    field_answer*,
+    field_type*,
+    form*,
+    form_field*,
+    formentry_archive*,
+    formentry_error*,
+    formentry_queue*,
+    global_property*,
+    hl7_in_archive*,
+    hl7_in_error*,
+    hl7_in_queue*,
+    hl7_source*,
+    location*,
+    mime_type*,
+    mrn_sequence_response*,
+    ncd_alert_summary*,
+    ncd_alert_type*,
+    ncd_code*,
+    ncd_code_condition*,
+    ncd_code_frequency*,
+    ncd_code_system*,
+    ncd_code_type*,
+    ncd_condition*,
+    ncd_condition_group*,
+    ncd_county*,
+    ncd_critic_def*,
+    ncd_critic_type*,
+    ncd_decided_result*,
+    ncd_entity*,
+    ncd_error*,
+    ncd_hl7_producer*,
+    ncd_institution*,
+    ncd_jurisdiction*,
+    ncd_manual_review_status_type*,
+    ncd_message_count_summary*,    
+    ncd_monitored_entity_code*,
+    ncd_monitored_entity_condition*,
+    ncd_nlp_context_type*,
+    ncd_nlp_critic_concept*,
+    ncd_nlp_critic_context*,
+    ncd_nlp_discrete_term*,
+    ncd_raw_message*,
+    ncd_reportable_result*,
+    ncd_reporting_criteria*,
+    ncd_task_run_status*,
+    ncd_zip_code*,
+    note*,
+    notification_alert*,
+    notification_alert_recipient*,
+    notification_template*,
+    obs*,
+    order_type*,
+    orders*,
+    patient*,
+    patient_identifier*,
+    patient_identifier_type*,
+    patient_program*,
+    patient_state*,
+    person*,
+    person_address*,
+    person_attribute*,
+    person_attribute_type*,
+    person_name*,
+    privilege*,
+    program*,
+    program_workflow*,
+    program_workflow_state*,
+    relationship*,
+    relationship_type*,
+    report_object*,
+    report_schema_xml*,
+    role*,
+    role_privilege*,
+    role_role*,
+    scheduler_task_config*,
+    scheduler_task_config_property*,
+    tribe*,
+    user_property*,
+    user_role*,
+    users*)>
+
+<!ELEMENT cohort EMPTY>
+<!ATTLIST cohort
+    cohort_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    voided CDATA #REQUIRED
+    voided_by CDATA #IMPLIED
+    date_voided CDATA #IMPLIED
+    void_reason CDATA #IMPLIED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+>
+
+<!ELEMENT cohort_member EMPTY>
+<!ATTLIST cohort_member
+    cohort_id CDATA #REQUIRED
+    patient_id CDATA #REQUIRED
+>
+
+<!ELEMENT complex_obs EMPTY>
+<!ATTLIST complex_obs
+    obs_id CDATA #REQUIRED
+    mime_type_id CDATA #REQUIRED
+    urn CDATA #IMPLIED
+    complex_value CDATA #IMPLIED
+>
+
+<!ELEMENT concept EMPTY>
+<!ATTLIST concept
+    concept_id CDATA #REQUIRED
+    retired CDATA #REQUIRED
+    short_name CDATA #IMPLIED
+    description CDATA #IMPLIED
+    form_text CDATA #IMPLIED
+    datatype_id CDATA #REQUIRED
+    class_id CDATA #REQUIRED
+    is_set CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    default_charge CDATA #IMPLIED
+    version CDATA #IMPLIED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+    retired_by CDATA #IMPLIED
+    date_retired CDATA #IMPLIED
+    retire_reason CDATA #IMPLIED
+>
+
+<!ELEMENT concept_answer EMPTY>
+<!ATTLIST concept_answer
+    concept_answer_id CDATA #REQUIRED
+    concept_id CDATA #REQUIRED
+    answer_concept CDATA #IMPLIED
+    answer_drug CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+>
+
+<!ELEMENT concept_class EMPTY>
+<!ATTLIST concept_class
+    concept_class_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    retired CDATA #REQUIRED
+    retired_by CDATA #IMPLIED
+    date_retired CDATA #IMPLIED
+    retire_reason CDATA #IMPLIED
+>
+
+<!ELEMENT concept_datatype EMPTY>
+<!ATTLIST concept_datatype
+    concept_datatype_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    hl7_abbreviation CDATA #IMPLIED
+    description CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    retired CDATA #REQUIRED
+    retired_by CDATA #IMPLIED
+    date_retired CDATA #IMPLIED
+    retire_reason CDATA #IMPLIED
+>
+
+<!ELEMENT concept_derived EMPTY>
+<!ATTLIST concept_derived
+    concept_id CDATA #REQUIRED
+    rule CDATA #IMPLIED
+    compile_date CDATA #IMPLIED
+    compile_status CDATA #IMPLIED
+    class_name CDATA #IMPLIED
+>
+
+<!ELEMENT concept_map EMPTY>
+<!ATTLIST concept_map
+    concept_map_id CDATA #REQUIRED
+    source CDATA #IMPLIED
+    source_id CDATA #IMPLIED
+    comment CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    concept_id CDATA #REQUIRED
+>
+
+<!ELEMENT concept_name EMPTY>
+<!ATTLIST concept_name
+    concept_id CDATA #IMPLIED
+    name CDATA #REQUIRED
+    short_name CDATA #IMPLIED
+    description CDATA #REQUIRED
+    locale CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    concept_name_id CDATA #REQUIRED
+>
+
+<!ELEMENT concept_numeric EMPTY>
+<!ATTLIST concept_numeric
+    concept_id CDATA #REQUIRED
+    hi_absolute CDATA #IMPLIED
+    hi_critical CDATA #IMPLIED
+    hi_normal CDATA #IMPLIED
+    low_absolute CDATA #IMPLIED
+    low_critical CDATA #IMPLIED
+    low_normal CDATA #IMPLIED
+    units CDATA #IMPLIED
+    precise CDATA #REQUIRED
+>
+
+<!ELEMENT concept_proposal EMPTY>
+<!ATTLIST concept_proposal
+    concept_proposal_id CDATA #REQUIRED
+    concept_id CDATA #IMPLIED
+    encounter_id CDATA #IMPLIED
+    original_text CDATA #REQUIRED
+    final_text CDATA #IMPLIED
+    obs_id CDATA #IMPLIED
+    obs_concept_id CDATA #IMPLIED
+    state CDATA #REQUIRED
+    comments CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+>
+
+<!ELEMENT concept_set EMPTY>
+<!ATTLIST concept_set
+    concept_id CDATA #REQUIRED
+    concept_set CDATA #REQUIRED
+    sort_weight CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+>
+
+<!ELEMENT concept_set_derived EMPTY>
+<!ATTLIST concept_set_derived
+    concept_id CDATA #REQUIRED
+    concept_set CDATA #REQUIRED
+    sort_weight CDATA #IMPLIED
+>
+
+<!ELEMENT concept_source EMPTY>
+<!ATTLIST concept_source
+    concept_source_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #REQUIRED
+    hl7_code CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    voided CDATA #IMPLIED
+    voided_by CDATA #IMPLIED
+    date_voided CDATA #IMPLIED
+    void_reason CDATA #IMPLIED
+>
+
+<!ELEMENT concept_state_conversion EMPTY>
+<!ATTLIST concept_state_conversion
+    concept_state_conversion_id CDATA #REQUIRED
+    concept_id CDATA #IMPLIED
+    program_workflow_id CDATA #IMPLIED
+    program_workflow_state_id CDATA #IMPLIED
+>
+
+<!ELEMENT concept_synonym EMPTY>
+<!ATTLIST concept_synonym
+    concept_id CDATA #REQUIRED
+    synonym CDATA #REQUIRED
+    locale CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+>
+
+<!ELEMENT concept_word EMPTY>
+<!ATTLIST concept_word
+    concept_id CDATA #REQUIRED
+    word CDATA #REQUIRED
+    synonym CDATA #REQUIRED
+    locale CDATA #REQUIRED
+>
+
+<!ELEMENT drug EMPTY>
+<!ATTLIST drug
+    drug_id CDATA #REQUIRED
+    concept_id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    combination CDATA #REQUIRED
+    dosage_form CDATA #IMPLIED
+    dose_strength CDATA #IMPLIED
+    maximum_daily_dose CDATA #IMPLIED
+    minimum_daily_dose CDATA #IMPLIED
+    route CDATA #IMPLIED
+    units CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    retired CDATA #REQUIRED
+    retired_by CDATA #IMPLIED
+    date_retired CDATA #IMPLIED
+    retire_reason CDATA #IMPLIED
+>
+
+<!ELEMENT drug_ingredient EMPTY>
+<!ATTLIST drug_ingredient
+    concept_id CDATA #REQUIRED
+    ingredient_id CDATA #REQUIRED
+>
+
+<!ELEMENT drug_order EMPTY>
+<!ATTLIST drug_order
+    order_id CDATA #REQUIRED
+    drug_inventory_id CDATA #IMPLIED
+    dose CDATA #IMPLIED
+    equivalent_daily_dose CDATA #IMPLIED
+    units CDATA #IMPLIED
+    frequency CDATA #IMPLIED
+    prn CDATA #REQUIRED
+    complex CDATA #REQUIRED
+    quantity CDATA #IMPLIED
+>
+
+<!ELEMENT encounter EMPTY>
+<!ATTLIST encounter
+    encounter_id CDATA #REQUIRED
+    encounter_type CDATA #IMPLIED
+    patient_id CDATA #REQUIRED
+    provider_id CDATA #REQUIRED
+    location_id CDATA #REQUIRED
+    form_id CDATA #IMPLIED
+    encounter_datetime CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    voided CDATA #REQUIRED
+    voided_by CDATA #IMPLIED
+    date_voided CDATA #IMPLIED
+    void_reason CDATA #IMPLIED
+>
+
+<!ELEMENT encounter_type EMPTY>
+<!ATTLIST encounter_type
+    encounter_type_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    retired CDATA #REQUIRED
+    retired_by CDATA #IMPLIED
+    date_retired CDATA #IMPLIED
+    retire_reason CDATA #IMPLIED
+>
+
+<!ELEMENT ext_mrn_log EMPTY>
+<!ATTLIST ext_mrn_log
+    mrn_log_id CDATA #REQUIRED
+    date_generated CDATA #IMPLIED
+    generated_by CDATA #IMPLIED
+    site CDATA #IMPLIED
+    mrn_first CDATA #IMPLIED
+    mrn_count CDATA #IMPLIED
+>
+
+<!ELEMENT field EMPTY>
+<!ATTLIST field
+    field_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED
+    field_type CDATA #IMPLIED
+    concept_id CDATA #IMPLIED
+    table_name CDATA #IMPLIED
+    attribute_name CDATA #IMPLIED
+    default_value CDATA #IMPLIED
+    select_multiple CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+    retired CDATA #REQUIRED
+    retired_by CDATA #IMPLIED
+    date_retired CDATA #IMPLIED
+    retire_reason CDATA #IMPLIED
+>
+
+<!ELEMENT field_answer EMPTY>
+<!ATTLIST field_answer
+    field_id CDATA #REQUIRED
+    answer_id CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+>
+
+<!ELEMENT field_type EMPTY>
+<!ATTLIST field_type
+    field_type_id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    description CDATA #IMPLIED
+    is_set CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+>
+
+<!ELEMENT form EMPTY>
+<!ATTLIST form
+    form_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    version CDATA #REQUIRED
+    build CDATA #IMPLIED
+    published CDATA #REQUIRED
+    description CDATA #IMPLIED
+    encounter_type CDATA #IMPLIED
+    template CDATA #IMPLIED
+    xslt CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+    retired CDATA #REQUIRED
+    retired_by CDATA #IMPLIED
+    date_retired CDATA #IMPLIED
+    retired_reason CDATA #IMPLIED
+>
+
+<!ELEMENT form_field EMPTY>
+<!ATTLIST form_field
+    form_field_id CDATA #REQUIRED
+    form_id CDATA #REQUIRED
+    field_id CDATA #REQUIRED
+    field_number CDATA #IMPLIED
+    field_part CDATA #IMPLIED
+    page_number CDATA #IMPLIED
+    parent_form_field CDATA #IMPLIED
+    min_occurs CDATA #IMPLIED
+    max_occurs CDATA #IMPLIED
+    required CDATA #IMPLIED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    sort_weight CDATA #IMPLIED
+>
+
+<!ELEMENT formentry_archive EMPTY>
+<!ATTLIST formentry_archive
+    formentry_archive_id CDATA #REQUIRED
+    form_data CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    creator CDATA #REQUIRED
+>
+
+<!ELEMENT formentry_error EMPTY>
+<!ATTLIST formentry_error
+    formentry_error_id CDATA #REQUIRED
+    form_data CDATA #REQUIRED
+    error CDATA #REQUIRED
+    error_details CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+>
+
+<!ELEMENT formentry_queue EMPTY>
+<!ATTLIST formentry_queue
+    formentry_queue_id CDATA #REQUIRED
+    form_data CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+>
+
+<!ELEMENT global_property EMPTY>
+<!ATTLIST global_property
+    property CDATA #REQUIRED
+    property_value CDATA #IMPLIED
+    description CDATA #IMPLIED
+>
+
+<!ELEMENT hl7_in_archive EMPTY>
+<!ATTLIST hl7_in_archive
+    hl7_in_archive_id CDATA #REQUIRED
+    hl7_source CDATA #REQUIRED
+    hl7_source_key CDATA #IMPLIED
+    hl7_data CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+>
+
+<!ELEMENT hl7_in_error EMPTY>
+<!ATTLIST hl7_in_error
+    hl7_in_error_id CDATA #REQUIRED
+    hl7_source CDATA #REQUIRED
+    hl7_source_key CDATA #IMPLIED
+    hl7_data CDATA #REQUIRED
+    error CDATA #REQUIRED
+    error_details CDATA #IMPLIED
+    date_created CDATA #REQUIRED
+>
+
+<!ELEMENT hl7_in_queue EMPTY>
+<!ATTLIST hl7_in_queue
+    hl7_in_queue_id CDATA #REQUIRED
+    hl7_source CDATA #REQUIRED
+    hl7_source_key CDATA #IMPLIED
+    hl7_data CDATA #REQUIRED
+    state CDATA #REQUIRED
+    date_processed CDATA #IMPLIED
+    error_msg CDATA #IMPLIED
+    date_created CDATA #IMPLIED
+>
+
+<!ELEMENT hl7_source EMPTY>
+<!ATTLIST hl7_source
+    hl7_source_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+>
+
+<!ELEMENT location EMPTY>
+<!ATTLIST location
+    location_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED
+    address1 CDATA #IMPLIED
+    address2 CDATA #IMPLIED
+    city_village CDATA #IMPLIED
+    state_province CDATA #IMPLIED
+    postal_code CDATA #IMPLIED
+    country CDATA #IMPLIED
+    latitude CDATA #IMPLIED
+    longitude CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    county_district CDATA #IMPLIED
+    neighborhood_cell CDATA #IMPLIED
+    region CDATA #IMPLIED
+    subregion CDATA #IMPLIED
+    township_division CDATA #IMPLIED
+    retired CDATA #REQUIRED
+    retired_by CDATA #IMPLIED
+    date_retired CDATA #IMPLIED
+    retire_reason CDATA #IMPLIED
+>
+
+<!ELEMENT mime_type EMPTY>
+<!ATTLIST mime_type
+    mime_type_id CDATA #REQUIRED
+    mime_type CDATA #REQUIRED
+    description CDATA #IMPLIED
+>
+
+<!ELEMENT mrn_sequence_response EMPTY>
+<!ATTLIST mrn_sequence_response
+    mrn_sequence_response_id CDATA #REQUIRED
+    patient_identifier_type_id CDATA #REQUIRED
+    lval CDATA #IMPLIED
+    prefix CDATA #IMPLIED
+    setupcomplete CDATA #IMPLIED
+>
+
+<!ELEMENT ncd_alert_summary EMPTY>
+<!ATTLIST ncd_alert_summary
+    id CDATA #REQUIRED
+    firstdate CDATA #REQUIRED
+    lastdate CDATA #REQUIRED
+    occurrences CDATA #REQUIRED
+    alerttypeid CDATA #REQUIRED
+    summary CDATA #REQUIRED
+    details CDATA #IMPLIED
+    dismissed CDATA #REQUIRED
+    dismisseduserid CDATA #IMPLIED
+    dismisseddate CDATA #IMPLIED
+    dismissedreason CDATA #IMPLIED
+    identity CDATA #REQUIRED
+    sendingapplication CDATA #IMPLIED
+    sendingfacility CDATA #IMPLIED
+    sendinglocation CDATA #IMPLIED
+    code CDATA #IMPLIED
+    displaydismissedusername CDATA #IMPLIED
+>
+
+<!ELEMENT ncd_alert_type EMPTY>
+<!ATTLIST ncd_alert_type
+    id CDATA #REQUIRED
+    alerttype CDATA #REQUIRED
+    description CDATA #IMPLIED
+>
+
+<!ELEMENT ncd_code EMPTY>
+<!ATTLIST ncd_code
+    id CDATA #REQUIRED
+    codetypeid CDATA #REQUIRED
+    codesystemid CDATA #REQUIRED
+    code CDATA #REQUIRED
+    displaytextkey CDATA #REQUIRED
+    voided CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_code_condition EMPTY>
+<!ATTLIST ncd_code_condition
+    id CDATA #REQUIRED
+    conditionnameid CDATA #REQUIRED
+    conditionindicator CDATA #IMPLIED
+    loinccode CDATA #IMPLIED
+    codesystem CDATA #IMPLIED
+    codename CDATA #IMPLIED
+>
+
+<!ELEMENT ncd_code_frequency EMPTY>
+<!ATTLIST ncd_code_frequency
+    loinccode CDATA #REQUIRED
+    patientzipcode CDATA #IMPLIED
+    institutezipcode CDATA #IMPLIED
+    doctorzipcode CDATA #IMPLIED
+    countdate CDATA #REQUIRED
+    instances CDATA #REQUIRED
+    id CDATA #REQUIRED
+    application CDATA #REQUIRED
+    facility CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_code_system EMPTY>
+<!ATTLIST ncd_code_system
+    id CDATA #REQUIRED
+    codesystem CDATA #REQUIRED
+    voided CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_code_type EMPTY>
+<!ATTLIST ncd_code_type
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    displaytextkey CDATA #REQUIRED
+    voided CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_condition EMPTY>
+<!ATTLIST ncd_condition
+    id CDATA #REQUIRED
+    conditionname CDATA #REQUIRED
+    conditiongroupid CDATA #REQUIRED
+    reportable CDATA #REQUIRED
+    manualReview CDATA #REQUIRED
+    reportAll CDATA #REQUIRED
+    voided CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_condition_group EMPTY>
+<!ATTLIST ncd_condition_group
+    id CDATA #REQUIRED
+    groupname CDATA #REQUIRED
+    displaysequence CDATA #IMPLIED
+    voided CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_county EMPTY>
+<!ATTLIST ncd_county
+    id CDATA #REQUIRED
+    county CDATA #REQUIRED
+    state CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_critic_def EMPTY>
+<!ATTLIST ncd_critic_def
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    typeId CDATA #REQUIRED
+    description CDATA #IMPLIED
+>
+
+<!ELEMENT ncd_critic_type EMPTY>
+<!ATTLIST ncd_critic_type
+    id CDATA #REQUIRED
+    type CDATA #IMPLIED
+>
+
+<!ELEMENT ncd_decided_result EMPTY>
+<!ATTLIST ncd_decided_result
+    id CDATA #REQUIRED
+    datatype CDATA #IMPLIED
+    resultcode CDATA #IMPLIED
+    resultvalue CDATA #IMPLIED
+    resultcount CDATA #IMPLIED
+    dateadded CDATA #IMPLIED
+    dateclassified CDATA #IMPLIED
+    classifiedbywhom CDATA #IMPLIED
+    conditionname CDATA #IMPLIED
+    lastmodified CDATA #IMPLIED
+    mpqsequencenumber CDATA #IMPLIED
+    obr CDATA #REQUIRED
+    obrtext CDATA #IMPLIED
+    obx CDATA #REQUIRED
+    obxtext CDATA #IMPLIED
+    nte CDATA #IMPLIED
+    loinccode CDATA #REQUIRED
+    disposition CDATA #REQUIRED
+    reportable CDATA #IMPLIED
+    obrCodeSystem CDATA #IMPLIED
+    obxCodeSystem CDATA #IMPLIED
+    obrAltText CDATA #IMPLIED
+    obxAltText CDATA #IMPLIED
+    rawmessageid CDATA #IMPLIED
+    manually_reviewed CDATA #IMPLIED
+    voided CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_entity EMPTY>
+<!ATTLIST ncd_entity
+    id CDATA #REQUIRED
+    application CDATA #REQUIRED
+    location CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_error EMPTY>
+<!ATTLIST ncd_error
+    id CDATA #REQUIRED
+    level CDATA #REQUIRED
+    message CDATA #REQUIRED
+    additionalinfo CDATA #IMPLIED
+    hl7id CDATA #REQUIRED
+    lastErrorDate CDATA #REQUIRED
+    mpqSeqNumber CDATA #REQUIRED
+    hidden CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_hl7_producer EMPTY>
+<!ATTLIST ncd_message_source
+    id CDATA #REQUIRED
+    applicationname CDATA #REQUIRED
+    facilityname CDATA #REQUIRED
+    institutionid CDATA #REQUIRED
+    reportall CDATA #REQUIRED
+    excluded CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_institution EMPTY>
+<!ATTLIST ncd_institution
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED
+    addressline1 CDATA #IMPLIED
+    addressline2 CDATA #IMPLIED
+    city CDATA #IMPLIED
+    state CDATA #IMPLIED
+    zip CDATA #IMPLIED
+    phone CDATA #IMPLIED
+    www CDATA #IMPLIED
+>
+
+<!ELEMENT ncd_jurisdiction EMPTY>
+<!ATTLIST ncd_jurisdiction
+    id CDATA #REQUIRED
+    jurisdiction CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_manual_review_status_type EMPTY>
+<!ATTLIST ncd_manual_review_status_type
+    id CDATA #REQUIRED
+    reviewStatus CDATA #REQUIRED
+    description CDATA #IMPLIED
+>
+
+<!ELEMENT ncd_message_count_summary EMPTY>
+<!ATTLIST ncd_message_count_summary
+    id CDATA #REQUIRED
+    processeddate CDATA #IMPLIED
+    potentiallyreportable CDATA #REQUIRED
+    decidedresultpositive CDATA #REQUIRED
+    decidedresultnegative CDATA #REQUIRED
+    criticpositive CDATA #REQUIRED
+    criticnegative CDATA #REQUIRED
+    indeterminate CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_monitored_entity_code EMPTY>
+<!ATTLIST ncd_monitored_entity_code
+    id CDATA #REQUIRED
+    entityid CDATA #REQUIRED
+    codeid CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_monitored_entity_condition EMPTY>
+<!ATTLIST ncd_monitored_entity_condition
+    id CDATA #REQUIRED
+    entityid CDATA #REQUIRED
+    conditionid CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_nlp_context_type EMPTY>
+<!ATTLIST ncd_nlp_context_type
+    id CDATA #REQUIRED
+    typeName CDATA #REQUIRED
+    usesContextGroup CDATA #REQUIRED
+    usesPreString CDATA #REQUIRED
+    usesPostString CDATA #REQUIRED
+    matchNegation CDATA #REQUIRED
+    usesSmallWindow CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_nlp_critic_concept EMPTY>
+<!ATTLIST ncd_nlp_critic_concept
+    concept_name CDATA #REQUIRED
+    code CDATA #IMPLIED
+    name_code CDATA #IMPLIED
+    absolutes CDATA #IMPLIED
+    abs_except CDATA #IMPLIED
+    altnum CDATA #IMPLIED
+    preconcept CDATA #IMPLIED
+    postconcept CDATA #IMPLIED
+    altcon1 CDATA #IMPLIED
+    altcon2 CDATA #IMPLIED
+    altcon3 CDATA #IMPLIED
+    alt_except CDATA #IMPLIED
+    neg_except_con CDATA #IMPLIED
+    neg_ex_neg CDATA #IMPLIED
+    on_off CDATA #IMPLIED
+    report_extraction CDATA #IMPLIED
+    section_extraction CDATA #IMPLIED
+    section_start CDATA #IMPLIED
+    section_end CDATA #IMPLIED
+    special_negs CDATA #IMPLIED
+    sml_window_negs CDATA #IMPLIED
+    absolute_negs CDATA #IMPLIED
+    contexts CDATA #IMPLIED
+    paragraph CDATA #IMPLIED
+    conditionid CDATA #REQUIRED
+    negation_group CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_nlp_critic_context EMPTY>
+<!ATTLIST ncd_nlp_critic_context
+    id CDATA #REQUIRED
+    contextValue CDATA #REQUIRED
+    contextGroup CDATA #IMPLIED
+    contextTypeId CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_nlp_discrete_term EMPTY>
+<!ATTLIST ncd_nlp_discrete_term
+    id CDATA #REQUIRED
+    term CDATA #REQUIRED
+    negative CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_raw_message EMPTY>
+<!ATTLIST ncd_raw_message
+    id CDATA #REQUIRED
+    hl7 CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_reportable_result EMPTY>
+<!ATTLIST ncd_reportable_result
+    id CDATA #REQUIRED
+    institutionid CDATA #IMPLIED
+    institutionidtype CDATA #IMPLIED
+    patientinstitutionmedicalrecordid CDATA #IMPLIED
+    globalpatientid CDATA #IMPLIED
+    patientssn CDATA #IMPLIED
+    patientname CDATA #IMPLIED
+    patientbirth CDATA #IMPLIED
+    patientrace CDATA #IMPLIED
+    patientphone CDATA #IMPLIED
+    patientstreet1 CDATA #IMPLIED
+    patientstreet2 CDATA #IMPLIED
+    patientcity CDATA #IMPLIED
+    patientcounty CDATA #IMPLIED
+    patientstate CDATA #IMPLIED
+    patientzip CDATA #IMPLIED
+    patientcountry CDATA #IMPLIED
+    providername CDATA #IMPLIED
+    providernamematched CDATA #IMPLIED
+    providerssn CDATA #IMPLIED
+    providerbirth CDATA #IMPLIED
+    providerpractice CDATA #IMPLIED
+    providerstreet CDATA #IMPLIED
+    providercity CDATA #IMPLIED
+    providerstate CDATA #IMPLIED
+    providerzip CDATA #IMPLIED
+    providercounty CDATA #IMPLIED
+    providerphone CDATA #IMPLIED
+    providerlocalid CDATA #IMPLIED
+    providerdeanumber CDATA #IMPLIED
+    providerlicense CDATA #IMPLIED
+    labname CDATA #IMPLIED
+    labid CDATA #IMPLIED
+    labphone CDATA #IMPLIED
+    labstreet1 CDATA #IMPLIED
+    labstreet2 CDATA #IMPLIED
+    labcity CDATA #IMPLIED
+    labstate CDATA #IMPLIED
+    labzip CDATA #IMPLIED
+    testid CDATA #IMPLIED
+    testname CDATA #IMPLIED
+    testcodesys CDATA #IMPLIED
+    testplacerordernum CDATA #IMPLIED
+    testfillerordernum CDATA #IMPLIED
+    testdate CDATA #IMPLIED
+    testparentplacer CDATA #IMPLIED
+    testparentfiller CDATA #IMPLIED
+    testspecimentext CDATA #IMPLIED
+    testdatatype CDATA #IMPLIED
+    testnormalrange CDATA #IMPLIED
+    testabnormalflag CDATA #IMPLIED
+    testcomment CDATA #IMPLIED
+    testrcvddatetime CDATA #IMPLIED
+    testmpqseqnumber CDATA #IMPLIED
+    testresultid CDATA #IMPLIED
+    testresultname CDATA #IMPLIED
+    testresultcodesys CDATA #IMPLIED
+    testresultsubid CDATA #IMPLIED
+    testresultcode CDATA #IMPLIED
+    testresultvalue CDATA #IMPLIED
+    testresultunits CDATA #IMPLIED
+    testpreviousdate CDATA #IMPLIED
+    conditionname CDATA #IMPLIED
+    obraltcode CDATA #IMPLIED
+    obraltcodetext CDATA #IMPLIED
+    obraltcodesys CDATA #IMPLIED
+    obxaltcode CDATA #IMPLIED
+    obxaltcodetext CDATA #IMPLIED
+    obxaltcodesys CDATA #IMPLIED
+    applicationfacilityid CDATA #IMPLIED
+    loinccodeid CDATA #IMPLIED
+    previousreportableresultid CDATA #IMPLIED
+    rawhl7id CDATA #IMPLIED
+    providernamesource CDATA #IMPLIED
+    provideraddresssource CDATA #IMPLIED
+    providerlocalidsource CDATA #IMPLIED
+    testdatesource CDATA #IMPLIED
+    testplacerordernumsource CDATA #IMPLIED
+    testfillerordernumsource CDATA #IMPLIED
+    facilityid CDATA #IMPLIED
+    patientsex CDATA #IMPLIED
+    testresultstatus CDATA #IMPLIED
+    resultseq CDATA #IMPLIED
+    obrSetId CDATA #REQUIRED
+    obxStartSetId CDATA #REQUIRED
+    obxEndSetId CDATA #REQUIRED
+    reviewStatusTypeId CDATA #REQUIRED
+    sendingApplication CDATA #IMPLIED
+    sendingFacility CDATA #IMPLIED
+    sendingLocation CDATA #IMPLIED
+    countyid CDATA #IMPLIED
+    jurisdictionid CDATA #IMPLIED
+    decidedResultId CDATA #IMPLIED
+    indicatingCriticId CDATA #IMPLIED
+    releaseDate CDATA #REQUIRED
+    reviewStatusTypeId CDATA #REQUIRED
+    sentInError CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_reporting_criteria EMPTY>
+<!ATTLIST ncd_reporting_criteria
+    id CDATA #REQUIRED
+    loinccodeid CDATA #REQUIRED
+    codesystemid CDATA #IMPLIED
+    resultcode CDATA #IMPLIED
+    resultvalue CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_task_run_status EMPTY>
+<!ATTLIST ncd_task_run_status
+    id CDATA #REQUIRED
+    task_id CDATA #REQUIRED
+    started CDATA #REQUIRED
+    ended CDATA #REQUIRED
+    first CDATA #IMPLIED
+    last CDATA #IMPLIED
+    succeeded CDATA #REQUIRED
+    message CDATA #REQUIRED
+>
+
+<!ELEMENT ncd_zip_code EMPTY>
+<!ATTLIST ncd_zip_code
+    id CDATA #REQUIRED
+    zipcode CDATA #REQUIRED
+    countyid CDATA #REQUIRED
+    jurisdictionid CDATA #IMPLIED
+>
+
+<!ELEMENT note EMPTY>
+<!ATTLIST note
+    note_id CDATA #REQUIRED
+    note_type CDATA #IMPLIED
+    patient_id CDATA #IMPLIED
+    obs_id CDATA #IMPLIED
+    encounter_id CDATA #IMPLIED
+    text CDATA #REQUIRED
+    priority CDATA #IMPLIED
+    parent CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+>
+
+<!ELEMENT notification_alert EMPTY>
+<!ATTLIST notification_alert
+    alert_id CDATA #REQUIRED
+    user_id CDATA #IMPLIED
+    text CDATA #REQUIRED
+    satisfied_by_any CDATA #REQUIRED
+    alert_read CDATA #REQUIRED
+    date_to_expire CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+>
+
+<!ELEMENT notification_alert_recipient EMPTY>
+<!ATTLIST notification_alert_recipient
+    alert_id CDATA #REQUIRED
+    user_id CDATA #REQUIRED
+    alert_read CDATA #REQUIRED
+    date_changed CDATA #IMPLIED
+>
+
+<!ELEMENT notification_template EMPTY>
+<!ATTLIST notification_template
+    template_id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    template CDATA #IMPLIED
+    subject CDATA #IMPLIED
+    sender CDATA #IMPLIED
+    recipients CDATA #IMPLIED
+    ordinal CDATA #IMPLIED
+>
+
+<!ELEMENT obs EMPTY>
+<!ATTLIST obs
+    obs_id CDATA #REQUIRED
+    person_id CDATA #REQUIRED
+    concept_id CDATA #REQUIRED
+    encounter_id CDATA #IMPLIED
+    order_id CDATA #IMPLIED
+    obs_datetime CDATA #REQUIRED
+    location_id CDATA #REQUIRED
+    obs_group_id CDATA #IMPLIED
+    accession_number CDATA #IMPLIED
+    value_group_id CDATA #IMPLIED
+    value_boolean CDATA #IMPLIED
+    value_coded CDATA #IMPLIED
+    value_drug CDATA #IMPLIED
+    value_datetime CDATA #IMPLIED
+    value_numeric CDATA #IMPLIED
+    value_modifier CDATA #IMPLIED
+    value_text CDATA #IMPLIED
+    date_started CDATA #IMPLIED
+    date_stopped CDATA #IMPLIED
+    comments CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    voided CDATA #REQUIRED
+    voided_by CDATA #IMPLIED
+    date_voided CDATA #IMPLIED
+    void_reason CDATA #IMPLIED
+>
+
+<!ELEMENT order_type EMPTY>
+<!ATTLIST order_type
+    order_type_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    retired CDATA #REQUIRED
+    retired_by CDATA #IMPLIED
+    date_retired CDATA #IMPLIED
+    retire_reason CDATA #IMPLIED
+>
+
+<!ELEMENT orders EMPTY>
+<!ATTLIST orders
+    order_id CDATA #REQUIRED
+    order_type_id CDATA #REQUIRED
+    concept_id CDATA #REQUIRED
+    orderer CDATA #IMPLIED
+    encounter_id CDATA #IMPLIED
+    instructions CDATA #IMPLIED
+    start_date CDATA #IMPLIED
+    auto_expire_date CDATA #IMPLIED
+    discontinued CDATA #REQUIRED
+    discontinued_date CDATA #IMPLIED
+    discontinued_by CDATA #IMPLIED
+    discontinued_reason CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    voided CDATA #REQUIRED
+    voided_by CDATA #IMPLIED
+    date_voided CDATA #IMPLIED
+    void_reason CDATA #IMPLIED
+    patient_id CDATA #REQUIRED
+>
+
+<!ELEMENT patient EMPTY>
+<!ATTLIST patient
+    patient_id CDATA #REQUIRED
+    tribe CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+    voided CDATA #REQUIRED
+    voided_by CDATA #IMPLIED
+    date_voided CDATA #IMPLIED
+    void_reason CDATA #IMPLIED
+>
+
+<!ELEMENT patient_identifier EMPTY>
+<!ATTLIST patient_identifier
+    patient_id CDATA #REQUIRED
+    identifier CDATA #REQUIRED
+    identifier_type CDATA #REQUIRED
+    preferred CDATA #REQUIRED
+    location_id CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    voided CDATA #REQUIRED
+    voided_by CDATA #IMPLIED
+    date_voided CDATA #IMPLIED
+    void_reason CDATA #IMPLIED
+>
+
+<!ELEMENT patient_identifier_type EMPTY>
+<!ATTLIST patient_identifier_type
+    patient_identifier_type_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #REQUIRED
+    format CDATA #IMPLIED
+    check_digit CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    required CDATA #REQUIRED
+    format_description CDATA #IMPLIED
+    validator CDATA #IMPLIED
+    retired CDATA #REQUIRED
+    retired_by CDATA #IMPLIED
+    date_retired CDATA #IMPLIED
+    retire_reason CDATA #IMPLIED
+>
+
+<!ELEMENT patient_program EMPTY>
+<!ATTLIST patient_program
+    patient_program_id CDATA #REQUIRED
+    patient_id CDATA #REQUIRED
+    program_id CDATA #REQUIRED
+    date_enrolled CDATA #IMPLIED
+    date_completed CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+    voided CDATA #REQUIRED
+    voided_by CDATA #IMPLIED
+    date_voided CDATA #IMPLIED
+    void_reason CDATA #IMPLIED
+>
+
+<!ELEMENT patient_state EMPTY>
+<!ATTLIST patient_state
+    patient_state_id CDATA #REQUIRED
+    patient_program_id CDATA #REQUIRED
+    state CDATA #REQUIRED
+    start_date CDATA #IMPLIED
+    end_date CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+    voided CDATA #REQUIRED
+    voided_by CDATA #IMPLIED
+    date_voided CDATA #IMPLIED
+    void_reason CDATA #IMPLIED
+>
+
+<!ELEMENT person EMPTY>
+<!ATTLIST person
+    person_id CDATA #REQUIRED
+    gender CDATA #IMPLIED
+    birthdate CDATA #IMPLIED
+    birthdate_estimated CDATA #IMPLIED
+    dead CDATA #REQUIRED
+    death_date CDATA #IMPLIED
+    cause_of_death CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+    voided CDATA #REQUIRED
+    voided_by CDATA #IMPLIED
+    date_voided CDATA #IMPLIED
+    void_reason CDATA #IMPLIED
+>
+
+<!ELEMENT person_address EMPTY>
+<!ATTLIST person_address
+    person_address_id CDATA #REQUIRED
+    person_id CDATA #IMPLIED
+    preferred CDATA #REQUIRED
+    address1 CDATA #IMPLIED
+    address2 CDATA #IMPLIED
+    city_village CDATA #IMPLIED
+    state_province CDATA #IMPLIED
+    postal_code CDATA #IMPLIED
+    country CDATA #IMPLIED
+    latitude CDATA #IMPLIED
+    longitude CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    voided CDATA #REQUIRED
+    voided_by CDATA #IMPLIED
+    date_voided CDATA #IMPLIED
+    void_reason CDATA #IMPLIED
+    county_district CDATA #IMPLIED
+    neighborhood_cell CDATA #IMPLIED
+    region CDATA #IMPLIED
+    subregion CDATA #IMPLIED
+    township_division CDATA #IMPLIED
+>
+
+<!ELEMENT person_attribute EMPTY>
+<!ATTLIST person_attribute
+    person_attribute_id CDATA #REQUIRED
+    person_id CDATA #REQUIRED
+    value CDATA #REQUIRED
+    person_attribute_type_id CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+    voided CDATA #REQUIRED
+    voided_by CDATA #IMPLIED
+    date_voided CDATA #IMPLIED
+    void_reason CDATA #IMPLIED
+>
+
+<!ELEMENT person_attribute_type EMPTY>
+<!ATTLIST person_attribute_type
+    person_attribute_type_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #REQUIRED
+    format CDATA #IMPLIED
+    foreign_key CDATA #IMPLIED
+    searchable CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+    retired CDATA #REQUIRED
+    retired_by CDATA #IMPLIED
+    date_retired CDATA #IMPLIED
+    retire_reason CDATA #IMPLIED
+>
+
+<!ELEMENT person_name EMPTY>
+<!ATTLIST person_name
+    person_name_id CDATA #REQUIRED
+    preferred CDATA #REQUIRED
+    person_id CDATA #IMPLIED
+    prefix CDATA #IMPLIED
+    given_name CDATA #IMPLIED
+    middle_name CDATA #IMPLIED
+    family_name_prefix CDATA #IMPLIED
+    family_name CDATA #IMPLIED
+    family_name2 CDATA #IMPLIED
+    family_name_suffix CDATA #IMPLIED
+    degree CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    voided CDATA #REQUIRED
+    voided_by CDATA #IMPLIED
+    date_voided CDATA #IMPLIED
+    void_reason CDATA #IMPLIED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+>
+
+<!ELEMENT privilege EMPTY>
+<!ATTLIST privilege
+    privilege CDATA #REQUIRED
+    description CDATA #REQUIRED
+>
+
+<!ELEMENT program EMPTY>
+<!ATTLIST program
+    program_id CDATA #REQUIRED
+    concept_id CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+    retired CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED
+>
+
+<!ELEMENT program_workflow EMPTY>
+<!ATTLIST program_workflow
+    program_workflow_id CDATA #REQUIRED
+    program_id CDATA #REQUIRED
+    concept_id CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    retired CDATA #REQUIRED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+>
+
+<!ELEMENT program_workflow_state EMPTY>
+<!ATTLIST program_workflow_state
+    program_workflow_state_id CDATA #REQUIRED
+    program_workflow_id CDATA #REQUIRED
+    concept_id CDATA #REQUIRED
+    initial CDATA #REQUIRED
+    terminal CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    retired CDATA #REQUIRED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+>
+
+<!ELEMENT relationship EMPTY>
+<!ATTLIST relationship
+    relationship_id CDATA #REQUIRED
+    person_a CDATA #REQUIRED
+    relationship CDATA #REQUIRED
+    person_b CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    voided CDATA #REQUIRED
+    voided_by CDATA #IMPLIED
+    date_voided CDATA #IMPLIED
+    void_reason CDATA #IMPLIED
+>
+
+<!ELEMENT relationship_type EMPTY>
+<!ATTLIST relationship_type
+    relationship_type_id CDATA #REQUIRED
+    a_is_to_b CDATA #REQUIRED
+    b_is_to_a CDATA #REQUIRED
+    preferred CDATA #REQUIRED
+    weight CDATA #REQUIRED
+    description CDATA #REQUIRED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+>
+
+<!ELEMENT report_object EMPTY>
+<!ATTLIST report_object
+    report_object_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED
+    report_object_type CDATA #REQUIRED
+    report_object_sub_type CDATA #REQUIRED
+    xml_data CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+    voided CDATA #REQUIRED
+    voided_by CDATA #IMPLIED
+    date_voided CDATA #IMPLIED
+    void_reason CDATA #IMPLIED
+>
+
+<!ELEMENT report_schema_xml EMPTY>
+<!ATTLIST report_schema_xml
+    report_schema_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #REQUIRED
+    xml_data CDATA #REQUIRED
+>
+
+<!ELEMENT role EMPTY>
+<!ATTLIST role
+    role CDATA #REQUIRED
+    description CDATA #REQUIRED
+>
+
+<!ELEMENT role_privilege EMPTY>
+<!ATTLIST role_privilege
+    role CDATA #REQUIRED
+    privilege CDATA #REQUIRED
+>
+
+<!ELEMENT role_role EMPTY>
+<!ATTLIST role_role
+    parent_role CDATA #REQUIRED
+    child_role CDATA #REQUIRED
+>
+
+<!ELEMENT scheduler_task_config EMPTY>
+<!ATTLIST scheduler_task_config
+    task_config_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED
+    schedulable_class CDATA #IMPLIED
+    start_time CDATA #IMPLIED
+    start_time_pattern CDATA #IMPLIED
+    repeat_interval CDATA #REQUIRED
+    start_on_startup CDATA #REQUIRED
+    started CDATA #REQUIRED
+    created_by CDATA #IMPLIED
+    date_created CDATA #IMPLIED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+>
+
+<!ELEMENT scheduler_task_config_property EMPTY>
+<!ATTLIST scheduler_task_config_property
+    task_config_property_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    value CDATA #IMPLIED
+    task_config_id CDATA #IMPLIED
+>
+
+<!ELEMENT tribe EMPTY>
+<!ATTLIST tribe
+    tribe_id CDATA #REQUIRED
+    retired CDATA #REQUIRED
+    name CDATA #REQUIRED
+>
+
+<!ELEMENT user_property EMPTY>
+<!ATTLIST user_property
+    user_id CDATA #REQUIRED
+    property CDATA #REQUIRED
+    property_value CDATA #REQUIRED
+>
+
+<!ELEMENT user_role EMPTY>
+<!ATTLIST user_role
+    user_id CDATA #REQUIRED
+    role CDATA #REQUIRED
+>
+
+<!ELEMENT users EMPTY>
+<!ATTLIST users
+    user_id CDATA #REQUIRED
+    system_id CDATA #REQUIRED
+    username CDATA #IMPLIED
+    password CDATA #IMPLIED
+    salt CDATA #IMPLIED
+    secret_question CDATA #IMPLIED
+    secret_answer CDATA #IMPLIED
+    creator CDATA #REQUIRED
+    date_created CDATA #REQUIRED
+    changed_by CDATA #IMPLIED
+    date_changed CDATA #IMPLIED
+    voided CDATA #REQUIRED
+    voided_by CDATA #IMPLIED
+    date_voided CDATA #IMPLIED
+    void_reason CDATA #IMPLIED
+>
+

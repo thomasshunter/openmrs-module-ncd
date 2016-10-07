@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2008 7:12:14 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.openmrs.module.ncd.database.NlpCriticConcept" table="ncd_nlp_critic_concept">
+        <id name="conceptName" type="string">
+            <column name="concept_name" length="32" />
+            <generator class="assigned" />
+        </id>
+        <property name="code" type="string">
+            <column name="code" length="65535" />
+        </property>
+        <many-to-one name="condition" 
+        	class="org.openmrs.module.ncd.database.Condition" 
+        	fetch="select"
+        	lazy="false">
+            <column name="conditionid" not-null="true" />
+        </many-to-one>
+        <property name="nameCode" type="string">
+            <column name="name_code" length="50" />
+        </property>
+        <property name="absolutes" type="string">
+            <column name="absolutes" length="65535" />
+        </property>
+        <property name="absExcept" type="string">
+            <column name="abs_except" length="65535" />
+        </property>
+        <property name="altnum" type="java.lang.Integer">
+            <column name="altnum" />
+        </property>
+        <property name="preConcept" type="string">
+            <column name="preconcept" length="65535" />
+        </property>
+        <property name="postConcept" type="string">
+            <column name="postconcept" length="65535" />
+        </property>
+        <property name="altCon1" type="string">
+            <column name="altcon1" length="65535" />
+        </property>
+        <property name="altCon2" type="string">
+            <column name="altcon2" length="65535" />
+        </property>
+        <property name="altCon3" type="string">
+            <column name="altcon3" length="65535" />
+        </property>
+        <property name="altExcept" type="string">
+            <column name="alt_except" length="65535" />
+        </property>
+        <property name="negExceptCon" type="string">
+            <column name="neg_except_con" length="65535" />
+        </property>
+        <property name="negExNeg" type="string">
+            <column name="neg_ex_neg" length="65535" />
+        </property>
+        <property name="onOff" type="string">
+            <column name="on_off" length="65535" />
+        </property>
+        <property name="reportExtraction" type="string">
+            <column name="report_extraction" length="65535" />
+        </property>
+        <property name="sectionExtraction" type="string">
+            <column name="section_extraction" length="65535" />
+        </property>
+        <property name="sectionStart" type="string">
+            <column name="section_start" length="65535" />
+        </property>
+        <property name="sectionEnd" type="string">
+            <column name="section_end" length="65535" />
+        </property>
+        <property name="specialNegs" type="string">
+            <column name="special_negs" length="65535" />
+        </property>
+        <property name="smallWindowNegs" type="string">
+            <column name="sml_window_negs" length="65535" />
+        </property>
+        <property name="absoluteNegs" type="string">
+            <column name="absolute_negs" length="65535" />
+        </property>
+        <property name="contexts" type="string">
+            <column name="contexts" length="65535" />
+        </property>
+        <property name="paragraph" type="string">
+        	<column name="paragraph" length="65535" />
+        </property>
+        <property name="negationGroup" type="string">
+        	<column name="negation_group" length="65535" />
+        </property>
+    </class>
+</hibernate-mapping>

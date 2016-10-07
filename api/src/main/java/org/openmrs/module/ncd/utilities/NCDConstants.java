@@ -1,0 +1,63 @@
+package org.openmrs.module.ncd.utilities;
+
+public class NCDConstants 
+{
+    // NCD privileges
+    public static final String PRIV_ADD_CODES = "Add NCD Codes";
+    public static final String PRIV_DELETE_CODES = "Delete NCD Codes";
+    public static final String PRIV_EDIT_CODES = "Edit NCD Codes";
+    public static final String PRIV_VIEW_CODES = "View NCD Codes";
+    public static final String PRIV_ADD_CONDITIONS = "Add NCD Conditions";
+    public static final String PRIV_DELETE_CONDITIONS = "Delete NCD Conditions";
+    public static final String PRIV_EDIT_CONDITIONS = "Edit NCD Conditions";
+    public static final String PRIV_VIEW_CONDITIONS = "View NCD Conditions";
+    public static final String PRIV_ADD_NLP_CONTEXTS = "Add NCD NLP Contexts";
+    public static final String PRIV_DELETE_NLP_CONTEXTS = "Delete NCD NLP Contexts";
+    public static final String PRIV_EDIT_NLP_CONTEXTS = "Edit NCD NLP Contexts";
+    public static final String PRIV_VIEW_NLP_CONTEXTS = "View NCD NLP Contexts";
+    public static final String PRIV_ADD_CRITICS = "Add NCD Critics";
+    public static final String PRIV_DELETE_CRITICS = "Delete NCD Critics";
+    public static final String PRIV_EDIT_CRITICS = "Edit NCD Critics";
+    public static final String PRIV_VIEW_CRITICS = "View NCD Critics";
+    public static final String PRIV_VIEW_DASHBOARD = "View NCD Dashboard";
+    public static final String PRIV_ADD_DECIDED_RESULTS = "Add NCD Decided Results";
+    public static final String PRIV_DELETE_DECIDED_RESULTS = "Delete NCD Decided Results";
+    public static final String PRIV_EDIT_DECIDED_RESULTS = "Edit NCD Decided Results";
+    public static final String PRIV_VIEW_DECIDED_RESULTS = "View NCD Decided Results";
+    public static final String PRIV_ADD_REPORTABLE_RESULTS = "Add NCD Reportable Results";
+    public static final String PRIV_DELETE_REPORTABLE_RESULTS = "Delete NCD Reportable Results";
+    public static final String PRIV_EDIT_REPORTABLE_RESULTS = "Edit NCD Reportable Results";
+    public static final String PRIV_VIEW_REPORTABLE_RESULTS = "View NCD Reportable Results";
+    public static final String PRIV_ADD_SCHEDULED_REPORTS = "Add NCD Scheduled Reports";
+    public static final String PRIV_DELETE_SCHEDULED_REPORTS = "Delete NCD Scheduled Reports";
+    public static final String PRIV_EDIT_SCHEDULED_REPORTS = "Edit NCD Scheduled Reports";
+    public static final String PRIV_VIEW_SCHEDULED_REPORTS = "View NCD Scheduled Reports";
+    public static final String PRIV_ADD_ALERTS = "Add NCD Alerts";
+    public static final String PRIV_DELETE_ALERTS = "Delete NCD Alerts";
+    public static final String PRIV_EDIT_ALERTS = "Edit NCD Alerts";
+    public static final String PRIV_VIEW_ALERTS = "View NCD Alerts";
+    public static final String PRIV_ADD_ENTITIES = "Add NCD Entities";
+    public static final String PRIV_DELETE_ENTITIES = "Delete NCD Entities";
+    public static final String PRIV_EDIT_ENTITIES = "Edit NCD Entities";
+    public static final String PRIV_VIEW_ENTITIES = "View NCD Entities";
+    public static final String PRIV_ADD_ERRORS = "Add NCD Errors";
+    public static final String PRIV_DELETE_ERRORS = "Delete NCD Errors";
+    public static final String PRIV_EDIT_ERRORS = "Edit NCD Errors";
+    public static final String PRIV_VIEW_ERRORS = "View NCD Errors";
+    public static final String PRIV_ADD_MONITORED_CODES = "Add NCD Monitored Codes";
+    public static final String PRIV_DELETE_MONITORED_CODES = "Delete NCD Monitored Codes";
+    public static final String PRIV_EDIT_MONITORED_CODES = "Edit NCD Monitored Codes";
+    public static final String PRIV_VIEW_MONITORED_CODES = "View NCD Monitored Codes";
+    public static final String PRIV_ADD_MESSAGE_COUNTS = "Add NCD Message Counts";
+    public static final String PRIV_RESET_MESSAGE_COUNTS = "Reset NCD Message Counts";
+    public static final String PRIV_VIEW_MESSAGE_COUNTS = "View NCD Message Counts";
+    public static final String PRIV_ADD_MESSAGE_SOURCES = "Add NCD Message Sources";
+    public static final String PRIV_DELETE_MESSAGE_SOURCES = "Delete NCD Message Sources";
+    public static final String PRIV_EDIT_MESSAGE_SOURCES = "Edit NCD Message Sources";
+    public static final String PRIV_VIEW_MESSAGE_SOURCES = "View NCD Message Sources";
+    public static final String PRIV_ADD_INSTITUTIONS = "Add NCD Institutions";
+    public static final String PRIV_DELETE_INSTITUTIONS = "Delete NCD Institutions";
+    public static final String PRIV_EDIT_INSTITUTIONS = "Edit NCD Institutions";
+    public static final String PRIV_VIEW_INSTITUTIONS = "View NCD Institutions";
+    public static final String PRIV_VIEW_NOTIFIER_CRITICS = "View notifier critics";
+}

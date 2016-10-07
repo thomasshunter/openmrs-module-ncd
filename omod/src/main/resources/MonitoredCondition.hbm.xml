@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2008 7:12:14 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.openmrs.module.ncd.database.MonitoredCondition"
+           table="ncd_monitored_condition">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="task" 
+        	class="org.openmrs.scheduler.TaskDefinition" 
+        	fetch="select"
+        	lazy="false">
+            <column name="task_id" not-null="true" />
+        </many-to-one>
+        <property name="application" type="string">
+            <column name="application" length="32" />
+        </property>
+        <property name="facility" type="string">
+            <column name="facility" length="32" />
+        </property>
+        <property name="location" type="string">
+            <column name="location" length="32" />
+        </property>
+        <many-to-one name="condition" 
+        	class="org.openmrs.module.ncd.database.Condition" 
+        	fetch="select"
+        	lazy="false">
+            <column name="condition_id" not-null="false" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

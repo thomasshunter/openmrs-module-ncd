@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <person_attribute_type person_attribute_type_id="8" name="ncd.GlobalPatientId" description="A global identifier for a patient. To be migrated to an identifier type when matching issues are resolved." format="String" searchable="true" creator="1" date_created="2008-09-09 16:45:04.0" retired="false"/>
+  <person_attribute_type person_attribute_type_id="9" name="ncd.PatientInstitutionMedicalRecordId" description="An institution-specific medical record id for a patient. Probably to be migrated to an identifier type when matching issues are resolved." format="String" searchable="true" creator="1" date_created="2008-09-09 16:45:04.0" retired="false"/>
+  <person_attribute_type person_attribute_type_id="10" name="ncd.PhoneNumber" description="A person&apos;s phone number." format="String" searchable="true" creator="1" date_created="2008-09-09 16:45:04.0" retired="false"/>
+  <person_attribute_type person_attribute_type_id="11" name="ncd.SocialSecurityNumber" description="A person&apos;s Social Security Number." format="String" searchable="true" creator="1" date_created="2008-09-09 16:45:04.0" retired="false"/>
+  <person_attribute_type person_attribute_type_id="12" name="ncd.ProviderLocalId" description="An identifier assigned to a provider by an institution(?)" format="String" searchable="true" creator="1" date_created="2008-09-11 15:55:02.0" retired="false"/>
+  <person_attribute_type person_attribute_type_id="13" name="ncd.ProviderLocalIdSource" description="The HL7 field in which the provider&apos;s local id was found." format="String" searchable="true" creator="1" date_created="2008-09-11 15:55:02.0" retired="false"/>
+  <person_attribute_type person_attribute_type_id="14" name="ncd.ProviderNameSource" description="The HL7 field in which the provider&apos;s name was found." format="String" searchable="true" creator="1" date_created="2008-09-11 15:55:02.0" retired="false"/>
+</dataset>

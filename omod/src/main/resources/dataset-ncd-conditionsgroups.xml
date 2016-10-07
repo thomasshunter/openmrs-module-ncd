@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <ncd_condition_group id="1" groupname="Antibiotic" displaysequence="1" voided="false"/>
+  <ncd_condition_group id="2" groupname="Birth Defects" displaysequence="2" voided="false"/>
+  <ncd_condition_group id="3" groupname="Cancer" displaysequence="2" voided="false"/>
+  <ncd_condition_group id="4" groupname="Chronic Disease" displaysequence="1" voided="false"/>
+  <ncd_condition_group id="5" groupname="Enteric" displaysequence="1" voided="false"/>
+  <ncd_condition_group id="6" groupname="HIV" displaysequence="1" voided="false"/>
+  <ncd_condition_group id="7" groupname="Hepatitis B" displaysequence="1" voided="false"/>
+  <ncd_condition_group id="8" groupname="Hepatitis C" displaysequence="1" voided="false"/>
+  <ncd_condition_group id="9" groupname="Invasive" displaysequence="1" voided="false"/>
+  <ncd_condition_group id="10" groupname="Lead" displaysequence="1" voided="false"/>
+  <ncd_condition_group id="11" groupname="Meningitis" displaysequence="1" voided="false"/>
+  <ncd_condition_group id="12" groupname="Other" displaysequence="1" voided="false"/>
+  <ncd_condition_group id="13" groupname="Poisonings" displaysequence="1" voided="false"/>
+  <ncd_condition_group id="14" groupname="Respiratory" displaysequence="1" voided="false"/>
+  <ncd_condition_group id="15" groupname="STD" displaysequence="1" voided="false"/>
+  <ncd_condition_group id="16" groupname="TB" displaysequence="1" voided="false"/>
+  <ncd_condition_group id="17" groupname="Vaccine Preventable" displaysequence="1" voided="false"/>
+  <ncd_condition_group id="18" groupname="Zoonotic" displaysequence="1" voided="false"/>
+  <ncd_condition id="4" conditionname="Test" conditiongroupid="1" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="5" conditionname="Meningococcal disease" conditiongroupid="11" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="6" conditionname="Scrub typhus" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="7" conditionname="Cysticercosis" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="8" conditionname="Toxic Shock Syndrome" conditiongroupid="9" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="9" conditionname="Ehrlichiosis" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="10" conditionname="Yersiniosis, non-plague" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="11" conditionname="Endemic (Murine) typhus" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="12" conditionname="Diphtheria" conditiongroupid="17" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="13" conditionname="Acute Pesticide Poisoning" conditiongroupid="13" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="14" conditionname="Poliomyelitis" conditiongroupid="17" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="15" conditionname="Pneumocystis" conditiongroupid="6" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="16" conditionname="Herpes simplex type 2" conditiongroupid="15" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="17" conditionname="Rocky mountain spotted fever" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="18" conditionname="Giardiasis" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="19" conditionname="Chickenpox" conditiongroupid="17" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="20" conditionname="Streptococcus pneumoniae" conditiongroupid="17" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="21" conditionname="Lead exposure" conditiongroupid="10" reportable="true" manualReview="false" reportAll="true" voided="false"/>
+  <ncd_condition id="22" conditionname="Babesiosis" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="23" conditionname="Rickettsial infection" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="24" conditionname="Amebiasis" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="25" conditionname="Shigellosis" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="26" conditionname="Meningitis, viral" conditiongroupid="11" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="27" conditionname="Gonorrhea" conditiongroupid="15" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="28" conditionname="Human T-lymphotrophic virus" conditiongroupid="6" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="29" conditionname="Lyme disease" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="30" conditionname="Mycobacterium, non-TB" conditiongroupid="16" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="31" conditionname="Cyclosporiasis" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="32" conditionname="Yellow fever" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="33" conditionname="Brucellosis" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="34" conditionname="Human immunodeficiency virus" conditiongroupid="6" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="35" conditionname="Leptospirosis" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="36" conditionname="Chanchroid" conditiongroupid="15" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="37" conditionname="Rabies (human)" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="38" conditionname="AFB Undetermined" conditiongroupid="16" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="39" conditionname="Colorado tick fever" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="40" conditionname="Trachoma" conditiongroupid="9" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="41" conditionname="Histoplasmosis" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="42" conditionname="Streptococcus, Group B" conditiongroupid="9" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="43" conditionname="Carboxyhemoglobin levels" conditiongroupid="13" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="44" conditionname="Echinococciasis" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="45" conditionname="Herpes simplex type 1" conditiongroupid="15" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="46" conditionname="Hantavirus" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="47" conditionname="Malaria" conditiongroupid="14" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="48" conditionname="Bartonellosis" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="49" conditionname="Granuloma inguinale" conditiongroupid="15" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="50" conditionname="Pertussis" conditiongroupid="17" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="51" conditionname="Hepatitis A" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="52" conditionname="Psittacosis" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="53" conditionname="Filariasis" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="54" conditionname="Rubella" conditiongroupid="17" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="55" conditionname="Tetanus" conditiongroupid="17" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="56" conditionname="Listeriosis" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="57" conditionname="Vibrio cholerae, non-O1" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="58" conditionname="Lymphogranuloma venereum" conditiongroupid="15" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="59" conditionname="Sickle cell disease" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="60" conditionname="Anthrax" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="61" conditionname="Meningitis, protozoal" conditiongroupid="11" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="62" conditionname="Q fever" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="63" conditionname="Hepatitis C" conditiongroupid="8" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="64" conditionname="Tularemia" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="65" conditionname="Hepatitis D" conditiongroupid="7" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="66" conditionname="Rickettsialpox" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="67" conditionname="Ebola" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="68" conditionname="Chlamydia infection" conditiongroupid="15" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="69" conditionname="Toxoplasmosis" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="70" conditionname="Marburg" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="71" conditionname="Herpes simplex" conditiongroupid="15" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="72" conditionname="Tuberculosis" conditiongroupid="16" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="73" conditionname="Cytomegalovirus" conditiongroupid="14" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="74" conditionname="Hepatitis E" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="75" conditionname="Escherichia coli O157:H7 infection" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="76" conditionname="Botulism" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="77" conditionname="Blastomycosis" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="78" conditionname="Staphylococcus" conditiongroupid="1" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="79" conditionname="Hepatitis B" conditiongroupid="7" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="80" conditionname="Dengue fever" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="81" conditionname="Relapsing fever" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="82" conditionname="Haemophilus influenzae" conditiongroupid="17" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="83" conditionname="Cryptococcosis" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="84" conditionname="Trichomoniasis" conditiongroupid="15" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="85" conditionname="Isosporiasis" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="86" conditionname="Measles" conditiongroupid="17" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="87" conditionname="Cryptosporidiosis" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="88" conditionname="Lassa fever" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="89" conditionname="Rotavirus" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="90" conditionname="Campylobacteriosis" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="91" conditionname="Strongyloides" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="92" conditionname="Trichinosis" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="93" conditionname="Meningitis, fungal" conditiongroupid="11" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="94" conditionname="Coccidioidomycosis" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="95" conditionname="Salmonellosis, non-typhoid" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="96" conditionname="Streptococcus, Group A" conditiongroupid="9" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="97" conditionname="Hepatitis G" conditiongroupid="7" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="98" conditionname="Epidemic typhus" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="99" conditionname="Genital warts" conditiongroupid="15" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="100" conditionname="Staphylococcus, Methicillin-resistant" conditiongroupid="1" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="101" conditionname="Fifth&apos;s disease" conditiongroupid="14" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="102" conditionname="Toxocariasis" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="103" conditionname="Legionellosis" conditiongroupid="14" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="104" conditionname="Mumps" conditiongroupid="17" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="105" conditionname="Syphilis" conditiongroupid="15" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="106" conditionname="Influenza" conditiongroupid="14" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="107" conditionname="Cholera" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="108" conditionname="Typhoid fever" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="109" conditionname="Arbovirus" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="110" conditionname="Meningitis, bacterial" conditiongroupid="11" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="111" conditionname="Plague" conditiongroupid="18" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="112" conditionname="Enterococcus, Vancomycin-resistant" conditiongroupid="1" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="113" conditionname="Neoplasms" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="114" conditionname="Musculoskeletal" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="115" conditionname="Integument" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="116" conditionname="Chromosome and syndromes" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="117" conditionname="Other and unspecified congenital defects" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="118" conditionname="Genitourinary" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="119" conditionname="Gastrointestinal" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="120" conditionname="Cardiovascular" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="121" conditionname="Respiratory" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="122" conditionname="Orofacial" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="123" conditionname="Central Nervous System" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="124" conditionname="Other testicular dysfunction" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="125" conditionname="Other paraproteinemias" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="126" conditionname="Waldenstrom&apos;s macroglobulinemia" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="127" conditionname="Disorders involving the immune system" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="128" conditionname="Hereditary hemolytic anemias" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="129" conditionname="Constitutional aplastic anemia" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="130" conditionname="Coagulation defects" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="131" conditionname="Primary thrombocytopenia" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="132" conditionname="Diseases of white blood cells" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="133" conditionname="Familial polycythemia" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="134" conditionname="Acute myelofibrosis" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="135" conditionname="Cerebral degenerations usually" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="136" conditionname="Anterior horn cell disease" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="137" conditionname="Muscular dystrophies and myopa" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="138" conditionname="Retrolental fibroplasia" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="139" conditionname="Hereditary retinal dystrophies" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="140" conditionname="Glaucoma of childhood" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="141" conditionname="Strabismus and other disorders" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="142" conditionname="Congenital nystagmus" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="143" conditionname="Anomalies of jaw" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="144" conditionname="Other prophylactic chemotherapy" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="145" conditionname="Other specified prophylactic m" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="146" conditionname="Radiotherapy session" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="147" conditionname="Maintenance chemotherapy" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="148" conditionname="Observation for suspected malignancy" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="149" conditionname="Diabetes mellitus" conditiongroupid="4" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="150" conditionname="Mesothelioma of peritoneum" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="151" conditionname="Adenoma of lung or bronchus" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="152" conditionname="Mesothelioma of pleura" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="153" conditionname="Dyshormonogenic goiter" conditiongroupid="2" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="154" conditionname="Cyclospora" conditiongroupid="5" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="155" conditionname="Kaposi&apos;s sarcoma" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="156" conditionname="Lymphoma, Burkitt&apos;s" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="157" conditionname="Lymphoma, immunoblastic" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="158" conditionname="Lymphoma, Primary" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="159" conditionname="Primary Lymphoid Hyperplasia and/or Lymphoid Inter" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+  <ncd_condition id="160" conditionname="Progressive Multifocal Leukoencephalopathy" conditiongroupid="3" reportable="true" manualReview="false" reportAll="false" voided="false"/>
+</dataset>

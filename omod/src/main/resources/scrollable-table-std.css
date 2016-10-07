@@ -1,0 +1,44 @@
+/*
+ * Styles for a scrollable table with a fixed header that works in both FireFox
+ * and IE7. Other browsers have not yet been tested.
+ *
+ * This approach taken from:
+ * http://rcswebsolutions.wordpress.com/2007/01/02/scrolling-html-table-with-fixed-header/ 
+ */
+
+/* datTable for styling only */
+table.scrollable {
+    margin: 0; !important
+    padding: 0;
+}
+
+table.scrollable th {
+    margin: 0;
+	padding: 4px 3px 4px 3px;
+}
+
+table.scrollable td {
+    margin: 0;
+    padding: 2px 3px 2px 3px;
+}
+
+div.scrollable {
+    overflow: auto;
+	margin: 15px 0 0 0;
+	position: relative;
+}
+
+/* Modern browsers accept this (not IE) and we are targetting firefox */
+html>/**/body div.scrollable table>tbody	{  
+    overflow: auto; 
+    overflow-x: hidden;
+}
+
+div.scrollable thead tr	{
+	position:relative;
+}
+
+/* prevent Mozilla scrollbar from hiding cell content* /
+div.scrollable td:last-child {
+	padding-right: 20px;
+}

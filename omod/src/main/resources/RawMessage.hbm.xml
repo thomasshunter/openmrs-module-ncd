@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2008 7:12:14 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.openmrs.module.ncd.database.RawMessage" table="ncd_raw_message">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="messageText" type="string">
+            <column name="hl7" not-null="true" />
+        </property>
+        <set name="errors" inverse="true">
+            <key>
+                <column name="hl7id" not-null="true" />
+            </key>
+            <one-to-many class="org.openmrs.module.ncd.database.Error" />
+        </set>
+        <set name="reportableResults" inverse="true">
+            <key>
+                <column name="rawhl7id" />
+            </key>
+            <one-to-many class="org.openmrs.module.ncd.database.ReportableResult" />
+        </set>
+    </class>
+</hibernate-mapping>

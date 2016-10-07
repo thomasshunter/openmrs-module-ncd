@@ -1,0 +1,437 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <ncd_nlp_context_group id="1" displayText="none"/>
+  <ncd_nlp_context_group id="2" displayText="micro"/>
+  <ncd_nlp_context_group id="3" displayText="standard"/>
+  <ncd_nlp_context_type id="1" typeName="ambiguous" usesContextGroup="false" usesPreString="true" usesPostString="true" matchNegation="true" usesSmallWindow="false"/>
+  <ncd_nlp_context_type id="2" typeName="family" usesContextGroup="false" usesPreString="true" usesPostString="true" matchNegation="true" usesSmallWindow="false"/>
+  <ncd_nlp_context_type id="3" typeName="history" usesContextGroup="false" usesPreString="true" usesPostString="false" matchNegation="true" usesSmallWindow="false"/>
+  <ncd_nlp_context_type id="4" typeName="postNegation" usesContextGroup="true" usesPreString="false" usesPostString="true" matchNegation="true" usesSmallWindow="false"/>
+  <ncd_nlp_context_type id="5" typeName="preNegation" usesContextGroup="true" usesPreString="true" usesPostString="false" matchNegation="true" usesSmallWindow="false"/>
+  <ncd_nlp_context_type id="6" typeName="postPseudo" usesContextGroup="false" usesPreString="false" usesPostString="true" matchNegation="false" usesSmallWindow="true"/>
+  <ncd_nlp_context_type id="7" typeName="prePseudo" usesContextGroup="false" usesPreString="true" usesPostString="false" matchNegation="false" usesSmallWindow="true"/>
+  <ncd_nlp_context_type id="8" typeName="test" usesContextGroup="true" usesPreString="true" usesPostString="true" matchNegation="false" usesSmallWindow="false"/>
+  <ncd_nlp_context_type id="9" typeName="discreteNegation" usesContextGroup="false" usesPreString="false" usesPostString="false" matchNegation="false" usesSmallWindow="true"/>
+  <ncd_nlp_context_type id="14" typeName="discreteFalsePositives" usesContextGroup="false" usesPreString="false" usesPostString="false" matchNegation="true" usesSmallWindow="false"/>
+  <ncd_nlp_critic_concept concept_name="bronchiectasis" code="4664|RG_494.0|ICD9" name_code="n|SN" absolutes="( bronchiectasis | bronchiectatic )" abs_except="" altnum="0" preconcept="" postconcept="" altcon1="" altcon2="" altcon3="" alt_except="" neg_except_con="" neg_ex_neg="" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="or_not_no" absolute_negs="" contexts="preNegation_postNegation_ambiguous_history" paragraph="" conditionid="161" negation_group=""/>
+  <ncd_nlp_critic_concept concept_name="campylobacter" code="35408001|SN" name_code="27665|SN" absolutes="(campylobacter)" abs_except="(will also be detected|for campylobacter|screen|screens for|culture for|antibiotic therapy|stool for|biochemically similar|similar to|invasiveness|not detected|checked for|refer to| sp )" altnum="0" altcon3="" alt_except="" neg_ex_neg="no anerobes_no anaerobes_no normal_not given_ no collection times_note called_call made_call needed_by mistake_no organisms seen_no growth_negative for inducible_no organism seen_gram negative_coagulase negative_should not be" special_negs="in error_negative negative_ntd not detected" sml_window_negs="not_no_negative_work up_workup_ or _work-up" absolute_negs="not campyl_no campyl_no viable campyl_negative campyl" contexts="preNegation_postNegation" conditionid="90" negation_group="micro"/>
+  <ncd_nlp_critic_concept concept_name="cardiomegaly" code="2719|RG_429.3|ICD9" name_code="b|SN" absolutes="(cardiomegaly)" abs_except="" altnum="0" preconcept="(enlargement|enlarged|prominent|large)(s+)?(of|the)?(s+w+)?(s+w+)?(s+)?" postconcept="(s+)?(is|of|with|have|has)?(s+w+)?(s+w+)?(s+)?(enlargement|enlarged|prominent|large)" altcon1="(cardiomegaly|heart size|heart|cardiomediastinal silhouette|cardiac ?.* silhouett(?:e|es))" altcon2="(cardiac)" altcon3="" alt_except="(s+)?(is|was|appears)(s+)?(not)(s+w+)?(s+w+)?(s+)?(enlarged|prominent|large)" neg_except_con="cardiomegaly_enlarged heart_is enlarged_" neg_ex_neg="stable_unchanged_" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="not_no" absolute_negs="" contexts="preNegation_postNegation_ambiguous_history" paragraph="" conditionid="162" negation_group=""/>
+  <ncd_nlp_critic_concept concept_name="cavitary lesions" code="4355|RG_518.89|ICD9" name_code="g|SN" absolutes="(cavitary|cavitation)" abs_except="" altnum="0" preconcept="" postconcept="" altcon1="" altcon2="" altcon3="" alt_except="" neg_except_con="" neg_ex_neg="" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="or_not_no" absolute_negs="" contexts="preNegation_postNegation_ambiguous_family_history" paragraph="" conditionid="163" negation_group=""/>
+  <ncd_nlp_critic_concept concept_name="chlamydia" code="27665|SN" name_code="27665|SN" absolutes="(chlamydia)" abs_except="(will also be detected|screen|screens for|culture for|antibiotic therapy|stool for|biochemically similar|and e coli 0157|similar to|invasiveness|sp)" altnum="0" altcon3="( chlamydia)" neg_ex_neg="no anerobes_no anaerobes_no normal_not given_ no collection times_note called_call made_call needed_by mistake_no organisms seen_no growth_negative for inducible_no organism seen_gram negative_coagulase negative_should not be" sml_window_negs="not_no_work up_workup_work-up" absolute_negs="not chlamy_no chlamy_no viable chlamy" contexts="preNegation_postNegation" conditionid="68" negation_group="micro"/>
+  <ncd_nlp_critic_concept concept_name="compression fracture" code="10520|RG_829.0|ICD9" name_code="d|SN" absolutes="( compression | wedge )" abs_except="(stockings|shap(?:ed|e))" altnum="0" preconcept="" postconcept="" altcon1="" altcon2="" altcon3="" alt_except="" neg_except_con="" neg_ex_neg="" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="not_no" absolute_negs="" contexts="preNegation_postNegation_ambiguous_history" paragraph="" conditionid="164" negation_group=""/>
+  <ncd_nlp_critic_concept concept_name="congestive heart failure" code="365|RG_428.0|ICD9" name_code="c|SN" absolutes="(chf|congestive heart failure|heart failure|congestive failure|failure)" abs_except="(respiratory failure|renal failure)" altnum="0" preconcept="" postconcept="" altcon1="" altcon2="" altcon3="" alt_except="" neg_except_con="" neg_ex_neg="" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="(s+)(no)(s+w+)?(s+w+)?(s+)?(failure )_(s+)(no)(s+w+)?(s+w+)?(s+)?(chf )" sml_window_negs="not_no" absolute_negs="" contexts="preNegation_postNegation_ambiguous_family_history" paragraph="" conditionid="165" negation_group=""/>
+  <ncd_nlp_critic_concept concept_name="ecoli" code="112283007|SN" name_code="27665|SN" absolutes="(escherichia|e coli|e. coli)" abs_except="(will also be detected|for e.coli|for escherichia|for e coli|screen|screens for|culture for|antibiotic therapy|stool for|biochemically similar|similar to|invasiveness|not detected|checked for|refer to|sp)" altnum="0" altcon3="" alt_except="" neg_ex_neg="no anerobes_no anaerobes_no normal_not given_ no collection times_note called_call made_call needed_by mistake_no organisms seen_no growth_negative for inducible_no organism seen_gram negative_coagulase negative_should not be" special_negs="in error_negative negative_ntd not detected" sml_window_negs="not_no_negative_work up_workup_ or _work-up" absolute_negs="not e. coli_no e. coli_no viable e. coli_negative e. coli" contexts="preNegation_postNegation" conditionid="75" negation_group="micro"/>
+  <ncd_nlp_critic_concept concept_name="fibrotic scars" code="1967|RG_516.3|ICD9" name_code="i|SN" absolutes="( fibrotic sca(?:rs|rring|r)| fibrosis| sca(?:rs|rring|r) )" abs_except="" altnum="0" preconcept="" postconcept="" altcon1="" altcon2="" altcon3="(fibrotic)" alt_except="" neg_except_con="" neg_ex_neg="" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="not_no" absolute_negs="" contexts="preNegation_postNegation_ambiguous_history" paragraph="" conditionid="166" negation_group=""/>
+  <ncd_nlp_critic_concept concept_name="gonorrhea" code="27665|SN" name_code="27665|SN" absolutes="(neisseria gonorr)" abs_except="(will also be detected|screen|screens for|culture for|antibiotic therapy|stool for|biochemically similar|similar to|invasiveness|sp)" altnum="0" altcon3="( gonorr)" alt_except="(for diagnosing|only culture|screen|infection control|other -|to date)" neg_ex_neg="no anerobes_no anaerobes_no normal_not given_ no collection times_note called_call made_call needed_by mistake_no organisms seen_no growth_negative for inducible_no organism seen_gram negative_coagulase negative_should not be" special_negs="in error_negative negative_ntd not detected" sml_window_negs="not_no_work up_workup_work-up" absolute_negs="not gonorr_no gonorr_no viable gonorr" contexts="preNegation_postNegation" conditionid="27" negation_group="micro"/>
+  <ncd_nlp_critic_concept concept_name="hilar adenopathy" code="2722|RG_785.6|ICD9" name_code="h|SN" absolutes="( hilar (lymph)?adenopathy| mediastinal (lymph)?adenopathy)" abs_except="" altnum="0" preconcept="(enlargement|enlarged|prominent|large)(s+)?(of|the)?(s+w+)?(s+w+)?(s+)?" postconcept="(s+)?(is|of|with|have|has)?(s+w+)?(s+w+)?(s+)?(enlargement|enlarged|prominent|large)" altcon1="(hilar(?: lymph )node(?:s)|mediastinal(?: lymph )node(?:s))" altcon2="" altcon3="(lymphadenopathy)" alt_except="(s+)?(is|was|appears)(s+)?(not)(s+w+)?(s+w+)?(s+)?(enlarged|prominent|large)" neg_except_con="" neg_ex_neg="" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="not_no" absolute_negs="" contexts="preNegation_postNegation_ambiguous_family_history" paragraph="" conditionid="167" negation_group=""/>
+  <ncd_nlp_critic_concept concept_name="interstitial markings" code="1967|RG_516.3|ICD9" name_code="l|SN" absolutes="( interstitial )" abs_except="" altnum="0" preconcept="" postconcept="" altcon1="" altcon2="" altcon3="" alt_except="" neg_except_con="" neg_ex_neg="" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="or_not_no" absolute_negs="" contexts="preNegation_postNegation_ambiguous_history" paragraph="" conditionid="168" negation_group=""/>
+  <ncd_nlp_critic_concept concept_name="legionella" code="7527002|SN" name_code="27665|SN" absolutes="(legionella)" abs_except="(will also be detected|for legionella|screen|screens for|culture for|antibiotic therapy|stool for|biochemically similar|similar to|invasiveness|sp)" altnum="0" altcon3="" alt_except="" neg_ex_neg="no anerobes_no anaerobes_no normal_not given_ no collection times_note called_call made_call needed_by mistake_no organisms seen_no growth_negative for inducible_no organism seen_gram negative_coagulase negative_should not be" special_negs="in error_negative negative_ntd not detected" sml_window_negs="not_no_negative_work up_workup_ or _work-up" absolute_negs="not legionella_no legionella_no viable legionella_negative legionella" contexts="preNegation_postNegation" conditionid="103" negation_group="micro"/>
+  <ncd_nlp_critic_concept concept_name="miliary" code="8114|RG" name_code="m|SN" absolutes="( miliary )" abs_except="" altnum="0" preconcept="" postconcept="" altcon1="" altcon2="" altcon3="" alt_except="" neg_except_con="" neg_ex_neg="" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="or_not_no" absolute_negs="" contexts="preNegation_postNegation_ambiguous_history" paragraph="" conditionid="169" negation_group=""/>
+  <ncd_nlp_critic_concept concept_name="mrsa" code="27665|SN" name_code="27665|SN" absolutes="( mrsa |methicillin|meth resistant)" abs_except="(only culture|screen|epidermidis|haemolyticus|hominis|infection control|other - |spermatozoa|by pcr|clinical correlation|to date)" altnum="0" preconcept="" postconcept="" altcon1="" altcon2="" altcon3="( mrsa |methicillin resistant staph aureus|methicillin resistant staphylococcus aureus)" alt_except="(only culture|screen|infection control|other -|to date)" neg_except_con="mrsa_methicillin" neg_ex_neg="no anerobes_no anaerobes_not given_ no collection times_note called_call made_call needed_by mistake_no organisms seen_no growth_negative for inducible_no organism seen_gram negative_coagulase negative_should not be" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="mrsa is in error_mrsa in error_negative negative_ntd not detected" sml_window_negs="not_no_work up_workup_work-up" absolute_negs="not mrsa_not methicillin_no methicillin_no mrsa_no viable methicillin" contexts="preNegation_postNegation" paragraph="mrsa_aureus" conditionid="100" negation_group="micro"/>
+  <ncd_nlp_critic_concept concept_name="pericardial effusion" code="4451|RG_423.8|ICD9" name_code="f|SN" absolutes="( pericardial effusion | pericardial fluid )" abs_except="" altnum="0" preconcept="(pericardial|cardiac)(s+w+)?(s+w+)?(s+)?" postconcept="(s+)?(is|of|with|have|has)?(s+w+)?(s+w+)?(s+)?(pericard(?:ium|ial)|cardiac)" altcon1="(effusion(?:s))" altcon2="" altcon3="" alt_except="" neg_except_con="" neg_ex_neg="" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="not_no" absolute_negs="" contexts="preNegation_postNegation_ambiguous_history" paragraph="" conditionid="170" negation_group=""/>
+  <ncd_nlp_critic_concept concept_name="pleural effusion" code="2232|RG_511.9|ICD9" name_code="j|SN" absolutes="( pleural effusion | pleural fluid | effusion)" abs_except="(pericardial|pericardium)" altnum="0" preconcept="(pleural|right|right-sided|left|left-sided|bilateral|lung|pulmonary)(s+w+)?(s+w+)?(s+)?" postconcept="(s+)?(is|of|with|have|has)?(s+w+)?(s+w+)?(s+)?(pleura|lung)" altcon1="(effusion|effusions|pleural fluid)" altcon2="" altcon3="" alt_except="(pericardial|pericardium)" neg_except_con="effusion_" neg_ex_neg="stable_unchanged_" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="not_no" absolute_negs="" contexts="preNegation_postNegation_ambiguous_history" paragraph="" conditionid="171" negation_group=""/>
+  <ncd_nlp_critic_concept concept_name="pneumonia" code="368|RG_486|ICD9" name_code="a|SN" absolutes="(pneumonia|infiltrate(s)? |consolidation)" abs_except="" altnum="0" preconcept="" postconcept="" altcon1="" altcon2="" altcon3="" alt_except="" neg_except_con="" neg_ex_neg="" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="or_not_no" absolute_negs="" contexts="preNegation_postNegation_ambiguous_family_history" paragraph="" conditionid="172" negation_group=""/>
+  <ncd_nlp_critic_concept concept_name="pneumothorax" code="1963|RG_512.8|ICD9" name_code="e|SN" absolutes="( pneumothorax | pneumo )" abs_except="" altnum="0" preconcept="" postconcept="" altcon1="" altcon2="" altcon3="" alt_except="" neg_except_con="" neg_ex_neg="" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="not_no" absolute_negs="" contexts="preNegation_postNegation_ambiguous_history" paragraph="" conditionid="173" negation_group=""/>
+  <ncd_nlp_critic_concept concept_name="pulmonary mass" code="2237|RG_786.6|ICD9" name_code="q|SN" absolutes="( mass | tumor | neoplasm | neoplastic )" abs_except="(evaluate for)" altnum="0" preconcept="" postconcept="" altcon1="" altcon2="" altcon3="" alt_except="" neg_except_con="" neg_ex_neg="" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="or_not_no" absolute_negs="" contexts="preNegation_postNegation_ambiguous_family_history" paragraph="" conditionid="174" negation_group=""/>
+  <ncd_nlp_critic_concept concept_name="pulmonary metastasis" code="6353|RG" name_code="p|SN" absolutes="( metastatic | metastasis | metastases | mets )" abs_except="(evaluate for)" altnum="0" preconcept="(metastatic|metastasis|metastases|mets)(s+)?(of|the)?(s+w+)?(s+w+)?(s+)?" postconcept="(s+)?(is|of|with|have|has)?(s+w+)?(s+w+)?(s+)?(metastatic|metastasis|metastases|mets)" altcon1="(lung disease|pulmonary disease|disease of the lung|lung|pulmonary)" altcon2="" altcon3="(mets)" alt_except="(watts|speed|grade|heart|evaluate for)" neg_except_con="" neg_ex_neg="" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="or_not_no" absolute_negs="" contexts="preNegation_postNegation_ambiguous_family_history" paragraph="" conditionid="175" negation_group=""/>
+  <ncd_nlp_critic_concept concept_name="pulmonary nodules" code="2232|RG_511.9|ICD9" name_code="k|SN" absolutes="( nodules | nodular | nodule)" abs_except="" altnum="0" preconcept="" postconcept="" altcon1="" altcon2="" altcon3="" alt_except="" neg_except_con="" neg_ex_neg="" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="not_no" absolute_negs="" contexts="preNegation_postNegation_ambiguous_history" paragraph="" conditionid="176" negation_group=""/>
+  <ncd_nlp_critic_concept concept_name="salmonella" code="27665|SN" name_code="27665|SN" absolutes="(salmonella|salmonellosis)" abs_except="(will also be detected|screen|screens for|culture for|antibiotic therapy|stool for|biochemically similar|and e coli 0157|similar to|invasiveness|not detected|checked for|refer to)" altnum="0" preconcept="" postconcept="" altcon1="" altcon2="" altcon3="" alt_except="" neg_except_con="salmonella" neg_ex_neg="no collection times" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="not_no" absolute_negs="" contexts="preNegation_postNegation" paragraph="" conditionid="95" negation_group="micro"/>
+  <ncd_nlp_critic_concept concept_name="shigella" code="27665|SN" name_code="27665|SN" absolutes="(shigella|shigellosis|stool for shiga toxin)" abs_except="(will also be detected|screen|screens for|culture for|antibiotic therapy|stool for|biochemically similar|and e coli 0157|similar to|invasiveness|not detected|checked for|refer to|sp)" altnum="0" preconcept="" postconcept="" altcon1="" altcon2="" altcon3="" alt_except="" neg_except_con="shigella" neg_ex_neg="no collection times" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="not_no" absolute_negs="" contexts="preNegation_postNegation" paragraph="" conditionid="25" negation_group="micro"/>
+  <ncd_nlp_critic_concept concept_name="tuberculosis" code="27665|SN" name_code="27665|SN" absolutes="(mycobacterium tubercu|tubercu)" abs_except="(are negative|is negative|if you suspect|will also be detected|screen|screens for|culture for|antibiotic therapy|stool for|biochemically similar|and e coli 0157|similar to|invasiveness)" altnum="0" altcon3="( mycobacterium tubercu|tubercu)" alt_except="(are negative|is negative)" neg_ex_neg="no anerobes_no anaerobes_no normal_not given_ no collection times_note called_call made_call needed_by mistake_no organisms seen_no growth_negative for inducible_no organism seen_gram negative_coagulase negative_should not be" sml_window_negs="not_no_work up_workup_work-up_negative_inconclusive" absolute_negs="not mycobacterium tubercu_no mycobacterium tubercu_no viable mycobacterium tubercu_not tb_no tb_no viable tb" contexts="preNegation_postNegation" conditionid="72" negation_group="micro"/>
+  <ncd_nlp_critic_concept concept_name="volume loss" code="6353|RG" name_code="o|SN" absolutes="( volume loss | loss of volume )" abs_except="" altnum="0" preconcept="(loss|low)(s+)?(of|the)?(s+w+)?(s+w+)?(s+)?" postconcept="(s+)?(is|of|with|have|has|are)?(s+w+)?(s+w+)?(s+)?(decreased|low|diminished|poor)" altcon1="(lung volume(s)?|pulmonary volume(s)?|respiratory volume(s)?)" altcon2="" altcon3="" alt_except="" neg_except_con="" neg_ex_neg="" on_off="" report_extraction="" section_extraction="" section_start="" section_end="" special_negs="" sml_window_negs="or_not_no" absolute_negs="" contexts="preNegation_postNegation_ambiguous_history" paragraph="" conditionid="177" negation_group=""/>
+  <ncd_nlp_critic_context id="1" contextValue=" may be " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="2" contextValue=" could be consistent with " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="3" contextValue=" vs " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="4" contextValue=" suggesting " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="5" contextValue=" suggestive of " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="6" contextValue=" may represent " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="7" contextValue=" which may indicate " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="8" contextValue=" cannot be excluded " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="9" contextValue=" may indicate " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="10" contextValue=" may also be " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="11" contextValue=" borderline " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="12" contextValue=" could represent " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="13" contextValue=" maybe " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="14" contextValue=" vs . " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="15" contextValue=" differential diagnosis " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="16" contextValue=" differential " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="17" contextValue=" whether " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="18" contextValue=" uncertain " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="19" contextValue=" not certain " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="20" contextValue=" suspicious " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="21" contextValue=" cannot rule out " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="22" contextValue=" cannot r/o " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="23" contextValue=" versus " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="24" contextValue=" are seen in " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="25" contextValue=" however " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="26" contextValue=" follow up " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="27" contextValue=" follow - up " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="28" contextValue=" followup " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="29" contextValue=" work - up " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="30" contextValue=" work up " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="31" contextValue=" workup " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="32" contextValue=" screen for " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="33" contextValue=" assess " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="34" contextValue=" less likely " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="35" contextValue=" worried about " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="36" contextValue=" worry about " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="37" contextValue=" look for evidence " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="38" contextValue=" question " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="39" contextValue=" unusual " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="40" contextValue=" can t rule out " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="41" contextValue=" can t r/o " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="42" contextValue=" re evaluate " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="43" contextValue=" concern for " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="44" contextValue=" remote " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="45" contextValue=" reevaluate " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="46" contextValue=" either " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="47" contextValue=" looking for " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="48" contextValue=" ruled out " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="49" contextValue=" examine for " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="50" contextValue=" assessment " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="51" contextValue=" may be seen " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="52" contextValue=" unlikely " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="53" contextValue=" if " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="54" contextValue=" possible " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="55" contextValue=" to suggest " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="56" contextValue=" could be " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="57" contextValue=" concern about " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="58" contextValue=" may have " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="59" contextValue=" atypical " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="60" contextValue=" possibly " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="61" contextValue=" consideration " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="62" contextValue=" considerations " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="63" contextValue=" may be " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="64" contextValue=" cannot exclude " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="65" contextValue=" likelihood " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="66" contextValue=" possibility " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="67" contextValue=" perhaps " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="68" contextValue=" concerned " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="69" contextValue=" possibilities " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="70" contextValue=" detecting " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="71" contextValue=" may reflect " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="72" contextValue=" can t be excluded " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="73" contextValue=" questionable " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="74" contextValue=" not excluded " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="75" contextValue=" cannot entirely exclude " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="76" contextValue=" can t entirely exclude " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="77" contextValue=" inconclusive for " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="78" contextValue=" not excluded " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="79" contextValue=" can t be excluded " contextTypeId="1"/>
+  <ncd_nlp_critic_context id="80" contextValue=" father " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="81" contextValue=" mother " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="82" contextValue=" brother " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="83" contextValue=" sister " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="84" contextValue=" sibling " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="85" contextValue=" dad " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="86" contextValue=" mom " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="87" contextValue=" uncle " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="88" contextValue=" grandfather " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="89" contextValue=" grandmother " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="90" contextValue=" aunt " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="91" contextValue=" relative with " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="92" contextValue=" grandma " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="93" contextValue=" grandpa " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="94" contextValue=" grandparent " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="95" contextValue=" grandparents " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="96" contextValue=" parent " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="97" contextValue=" parents " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="98" contextValue=" cousin " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="99" contextValue=" cousins " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="100" contextValue=" neice " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="101" contextValue=" nephew " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="102" contextValue=" neices " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="103" contextValue=" nephews " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="104" contextValue=" uncles " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="105" contextValue=" sisters " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="106" contextValue=" brothers " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="107" contextValue=" relatives with " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="108" contextValue=" aunts " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="109" contextValue=" siblings " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="110" contextValue=" family " contextTypeId="2"/>
+  <ncd_nlp_critic_context id="111" contextValue=" indication : " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="112" contextValue=" history : " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="113" contextValue=" history " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="114" contextValue=" history of " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="115" contextValue=" followup " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="116" contextValue=" follow-up " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="117" contextValue=" workup " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="118" contextValue=" work-up " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="119" contextValue=" for exam : " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="120" contextValue=" clinical history/impression " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="121" contextValue=" pre operative " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="122" contextValue=" indication " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="123" contextValue=" evaluate for " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="124" contextValue=" monitor for " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="125" contextValue=" preoperative " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="126" contextValue=" check for " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="127" contextValue=" admitting diagnosis " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="128" contextValue=" recent " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="129" contextValue=" rule out " contextTypeId="3"/>
+  <ncd_nlp_critic_context id="130" contextValue=" is negative " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="131" contextValue=" not present " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="132" contextValue=" denied " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="133" contextValue=" declined " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="134" contextValue=" absent " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="135" contextValue=" denies " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="136" contextValue=" unlikely " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="137" contextValue=" was ruled out " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="138" contextValue=" is ruled out " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="139" contextValue=" are ruled out " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="140" contextValue=" have been ruled out " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="141" contextValue=" has been ruled out " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="142" contextValue=" has resolved " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="143" contextValue=" is unremarkable " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="144" contextValue=" normal " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="145" contextValue=" are normal " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="146" contextValue=" cleared " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="147" contextValue=" nl " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="148" contextValue=" wnl " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="149" contextValue=" difficult ro " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="150" contextValue=" stable " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="151" contextValue=" unremarkable " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="152" contextValue=" are unremarkable " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="153" contextValue=" are negative " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="154" contextValue=" negative " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="155" contextValue=" not identified " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="156" contextValue=" none " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="157" contextValue=" is excluded " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="158" contextValue=" no evidence " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="159" contextValue=" have resolved " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="160" contextValue=" not seen " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="161" contextValue=" are excluded " contextGroup="standard" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="162" contextValue=" no " contextGroup="micro" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="163" contextValue=" not " contextGroup="micro" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="164" contextValue=" r/o " contextGroup="micro" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="165" contextValue=" look for " contextGroup="micro" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="166" contextValue=" check for " contextGroup="micro" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="167" contextValue=" work up " contextGroup="micro" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="168" contextValue=" rule out " contextGroup="micro" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="169" contextValue=" previously reported as " contextGroup="micro" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="170" contextValue=" susceptibility see " contextGroup="micro" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="171" contextValue=" innnn error " contextGroup="micro" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="172" contextValue=" set up for " contextGroup="micro" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="173" contextValue=" ro " contextGroup="micro" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="174" contextValue=" negative for " contextGroup="micro" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="175" contextValue=" unresolved " contextGroup="micro" contextTypeId="4"/>
+  <ncd_nlp_critic_context id="176" contextValue=" no increase " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="177" contextValue=" no suspicious change " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="178" contextValue=" no significant change " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="179" contextValue=" no change " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="180" contextValue=" no interval change " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="181" contextValue=" no definte change " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="182" contextValue=" no significant interval change " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="183" contextValue=" not extend " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="184" contextValue=" not cause " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="185" contextValue=" not certain if " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="186" contextValue=" not certain whther " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="187" contextValue=" no necessarily " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="188" contextValue=" not only " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="189" contextValue=" gram negative " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="190" contextValue=" without difficulty " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="191" contextValue=" no resolution of " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="192" contextValue=" not significantly changed " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="193" contextValue=" not significant changed " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="194" contextValue=" not changed " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="195" contextValue=" unchanged " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="196" contextValue=" not exclude " contextTypeId="6"/>
+  <ncd_nlp_critic_context id="197" contextValue=" absence of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="198" contextValue=" cannot see " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="199" contextValue=" checked for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="200" contextValue=" declined " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="201" contextValue=" declines " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="202" contextValue=" denied " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="203" contextValue=" denies " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="204" contextValue=" denying " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="205" contextValue=" fails to reveal " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="206" contextValue=" free of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="207" contextValue=" negative for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="208" contextValue=" never developed " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="209" contextValue=" never had " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="210" contextValue=" no " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="211" contextValue=" no abnormal " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="212" contextValue=" no cause of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="213" contextValue=" no complaints of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="214" contextValue=" no evidence " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="215" contextValue=" no new evidence " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="216" contextValue=" no other evidence " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="217" contextValue=" no evidence to suggest " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="218" contextValue=" no findings of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="219" contextValue=" no findings to indicate " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="220" contextValue=" no mammographic evidence of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="221" contextValue=" no new " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="222" contextValue=" no radiographic evidence of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="223" contextValue=" no sign of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="224" contextValue=" no suggestion of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="225" contextValue=" no suspicious " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="226" contextValue=" not " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="227" contextValue=" not appear " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="228" contextValue=" not appreciate " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="229" contextValue=" not associated with " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="230" contextValue=" not compalin of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="231" contextValue=" not demonstrate " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="232" contextValue=" not exhibit " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="233" contextValue=" not feel " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="234" contextValue=" not had " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="235" contextValue=" not have " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="236" contextValue=" not know of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="237" contextValue=" not known to have " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="238" contextValue=" not reveal " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="239" contextValue=" not see " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="240" contextValue=" not to be " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="241" contextValue=" patient was not " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="242" contextValue=" rather than " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="243" contextValue=" resolved " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="244" contextValue=" test for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="245" contextValue=" unremarkable for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="246" contextValue=" with no " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="247" contextValue=" without " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="248" contextValue=" without any evidence of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="249" contextValue=" without evidence " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="250" contextValue=" without sign of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="251" contextValue=" rules out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="252" contextValue=" rules him out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="253" contextValue=" rules her out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="254" contextValue=" rules the patient out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="255" contextValue=" ruled out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="256" contextValue=" ruled him out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="257" contextValue=" ruled her out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="258" contextValue=" ruled the patient out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="259" contextValue=" ruled out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="260" contextValue=" ruled him out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="261" contextValue=" ruled her out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="262" contextValue=" ruled the patient out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="263" contextValue=" ruled out against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="264" contextValue=" ruled him out against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="265" contextValue=" ruled her out against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="266" contextValue=" ruled the patient out against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="267" contextValue=" did rule out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="268" contextValue=" did rule out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="269" contextValue=" did rule out against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="270" contextValue=" did rule him out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="271" contextValue=" did rule her out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="272" contextValue=" did rule the patient out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="273" contextValue=" did rule him out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="274" contextValue=" did rule her out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="275" contextValue=" did rule him out against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="276" contextValue=" did rule her out against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="277" contextValue=" did rule the patient out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="278" contextValue=" did rule the patient out against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="279" contextValue=" can rule out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="280" contextValue=" can rule out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="281" contextValue=" can rule out against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="282" contextValue=" can rule him out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="283" contextValue=" can rule her out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="284" contextValue=" can rule the patient out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="285" contextValue=" can rule him out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="286" contextValue=" can rule her out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="287" contextValue=" can rule the patient out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="288" contextValue=" can rule him out against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="289" contextValue=" can rule her out against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="290" contextValue=" can rule the patient out against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="291" contextValue=" adequate to rule out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="292" contextValue=" adequate to rule him out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="293" contextValue=" adequate to rule her out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="294" contextValue=" adequate to rule the patient out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="295" contextValue=" adequate to rule out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="296" contextValue=" adequate to rule him out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="297" contextValue=" adequate to rule her out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="298" contextValue=" adequate to rule the patient out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="299" contextValue=" adequate to rule the patient out against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="300" contextValue=" sufficient to rule out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="301" contextValue=" sufficient to rule him out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="302" contextValue=" sufficient to rule her out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="303" contextValue=" sufficient to rule the patient out " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="304" contextValue=" sufficient to rule for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="305" contextValue=" sufficient to rule him out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="306" contextValue=" sufficient to rule her out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="307" contextValue=" sufficient to rule the patient out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="308" contextValue=" sufficient to rule out against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="309" contextValue=" sufficient to rule him out against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="310" contextValue=" sufficient to rule her out against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="311" contextValue=" sufficient to rule the patient out against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="312" contextValue=" clearing of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="313" contextValue=" resolution of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="314" contextValue=" normal " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="315" contextValue=" unremarkable " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="316" contextValue=" no signifcant " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="317" contextValue=" no signs of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="318" contextValue=" without indication of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="319" contextValue=" rules out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="320" contextValue=" rules him out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="321" contextValue=" rules her out for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="322" contextValue=" clear of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="323" contextValue=" negative " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="324" contextValue=" against " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="325" contextValue=" free from " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="326" contextValue=" atypical for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="327" contextValue=" not find " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="328" contextValue=" none " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="329" contextValue=" neither had evidence " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="330" contextValue=" detetcting " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="331" contextValue=" cleared of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="332" contextValue=" cleared from " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="333" contextValue=" clear from " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="334" contextValue=" clear of " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="335" contextValue=" clear for " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="336" contextValue=" nor " contextGroup="standard" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="337" contextValue=" no " contextGroup="micro" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="338" contextValue=" not " contextGroup="micro" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="339" contextValue=" r/o " contextGroup="micro" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="340" contextValue=" look for " contextGroup="micro" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="341" contextValue=" check for " contextGroup="micro" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="342" contextValue=" work up " contextGroup="micro" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="343" contextValue=" rule out " contextGroup="micro" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="344" contextValue=" previously reported as " contextGroup="micro" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="345" contextValue=" susceptibility see " contextGroup="micro" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="346" contextValue=" innnn error " contextGroup="micro" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="347" contextValue=" set up for " contextGroup="micro" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="348" contextValue=" ro " contextGroup="micro" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="349" contextValue=" negative for " contextGroup="micro" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="350" contextValue=" unresolved " contextGroup="micro" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="351" contextValue=" no increase " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="352" contextValue=" no suspicious change " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="353" contextValue=" no significant change " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="354" contextValue=" no change " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="355" contextValue=" no interval change " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="356" contextValue=" no definite change " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="357" contextValue=" no significant interval change " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="358" contextValue=" not extend " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="359" contextValue=" not cause " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="360" contextValue=" not certain if " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="361" contextValue=" not certain whether " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="362" contextValue=" not necessarily " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="363" contextValue=" not only " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="364" contextValue=" gram negative " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="365" contextValue=" without difficulty " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="366" contextValue=" no resolution of " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="367" contextValue=" not significantly changed " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="368" contextValue=" not changed " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="369" contextValue=" not exclude " contextTypeId="7"/>
+  <ncd_nlp_critic_context id="558" contextValue=" inhibitory for " contextGroup="micro" contextTypeId="5"/>
+  <ncd_nlp_critic_context id="563" contextValue=" non " contextTypeId="9"/>
+  <ncd_nlp_critic_context id="564" contextValue=" non - " contextTypeId="9"/>
+  <ncd_nlp_critic_context id="565" contextValue=" none " contextTypeId="9"/>
+  <ncd_nlp_critic_context id="566" contextValue=" not " contextTypeId="9"/>
+  <ncd_nlp_critic_context id="583" contextValue=" gram positive " contextTypeId="14"/>
+  <ncd_nlp_critic_context id="584" contextValue=" nonreac " contextTypeId="14"/>
+  <ncd_nlp_critic_context id="585" contextValue=" no " contextTypeId="14"/>
+  <ncd_nlp_critic_context id="586" contextValue=" not " contextTypeId="14"/>
+  <ncd_nlp_discrete_term id="40" term=" abs " negative="true"/>
+  <ncd_nlp_discrete_term id="41" term=" absent " negative="true"/>
+  <ncd_nlp_discrete_term id="42" term=" active " negative="false"/>
+  <ncd_nlp_discrete_term id="43" term=" conf " negative="false"/>
+  <ncd_nlp_discrete_term id="44" term=" confirmed " negative="false"/>
+  <ncd_nlp_discrete_term id="45" term=" detected " negative="false"/>
+  <ncd_nlp_discrete_term id="46" term=" inh " negative="true"/>
+  <ncd_nlp_discrete_term id="47" term=" inhibitory " negative="true"/>
+  <ncd_nlp_discrete_term id="48" term=" neg " negative="true"/>
+  <ncd_nlp_discrete_term id="49" term=" negative " negative="true"/>
+  <ncd_nlp_discrete_term id="50" term=" nonreact " negative="true"/>
+  <ncd_nlp_discrete_term id="51" term=" nonreactive " negative="true"/>
+  <ncd_nlp_discrete_term id="52" term=" pos " negative="false"/>
+  <ncd_nlp_discrete_term id="53" term=" positive " negative="false"/>
+  <ncd_nlp_discrete_term id="54" term=" present " negative="false"/>
+  <ncd_nlp_discrete_term id="55" term=" reactive " negative="false"/>
+  <ncd_nlp_discrete_term id="56" term=" unresolved " negative="true"/>
+</dataset>

@@ -1,0 +1,1 @@
+mvn -e clean install -DskipTests=true -Djavax.net.ssl.trustStore=C:/DEV/JDK6_45/jre/lib/security/trust.jks -Djavax.net.ssl.trustStorePassword=changeit

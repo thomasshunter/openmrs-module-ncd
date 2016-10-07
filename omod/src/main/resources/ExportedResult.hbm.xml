@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.openmrs.module.ncd.database.ExportedResult" table="ncd_exported_result">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="taskRunStatus" class="org.openmrs.module.ncd.database.TaskRunStatus" fetch="select">
+            <column name="taskRunStatusId" not-null="true" />
+        </many-to-one>
+        <many-to-one name="reportableResult" class="org.openmrs.module.ncd.database.ReportableResult" fetch="select">
+            <column name="reportableResultId" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

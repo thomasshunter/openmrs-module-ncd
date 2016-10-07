@@ -1,0 +1,67 @@
+.oddRowXX {
+	background-color: #E0FFE0;
+}
+
+.evenRowXX {
+	background-color: #FFFFFF;
+}
+
+.retired {
+	text-decoration: line-through;
+}
+
+thead th {
+	text-align: center;
+	font-weight: bold;
+	background-color: #D0D0D0
+}
+
+span.sortcolumnheader {
+  text-decoration: none;
+  cursor: pointer;
+  cursor: hand;
+}
+
+/* Doesn't seem to work correctly yet - this is an HTML 4.01-ism. */
+th td {
+	white-space: nowrap;
+}
+
+/* Doesn't seem to work correctly yet - this is an HTML 4.01-ism. */
+td.nowrap {
+	white-space: nowrap;
+}
+
+
+a.unmarked {
+	border-style: none;
+	font-style: normal;
+	text-decoration: none;
+}
+
+.buttons {
+	text-align: left;
+}
+.noborder {
+	border-style: none;
+}
+.nobox {
+	width: 99%;
+	padding: 5px 2px 5px 2px;
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: .9em;	
+}
+
+div.scrollable {
+	overflow: auto;
+	margin-right: 20px;
+}
+
+table.list td {
+	border-right: 1px solid grey;
+}
+
+code.hl7 {
+}

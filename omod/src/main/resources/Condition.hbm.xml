@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2008 7:12:14 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.openmrs.module.ncd.database.Condition" table="ncd_condition">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="conditionGroup" class="org.openmrs.module.ncd.database.ConditionGroup" fetch="select">
+            <column name="conditiongroupid" not-null="true" />
+        </many-to-one>
+        <property name="displayText" type="string">
+            <column name="conditionname" length="65535" not-null="true" />
+        </property>
+        <property name="reportable" type="boolean">
+            <column name="reportable" not-null="true" />
+        </property>
+        <property name="manualReviewRequired" type="boolean">
+        	<column name="manualReview" not-null="true" />
+        </property>
+        <property name="reportAll" type="boolean">
+        	<column name="reportAll" not-null="true" />
+        </property>
+        <property name="retired" type="boolean">
+            <column name="voided" not-null="true" />
+        </property>
+        <set name="codeConditions" inverse="true">
+            <key>
+                <column name="conditionnameid" not-null="true" />
+            </key>
+            <one-to-many class="org.openmrs.module.ncd.database.CodeCondition" />
+        </set>
+        <set name="nlpCriticConcepts">
+        	<key>
+        		<column name="conditionid" not-null="true" />
+        	</key>
+        	<one-to-many class="org.openmrs.module.ncd.database.NlpCriticConcept" />
+        </set>
+    </class>
+</hibernate-mapping>

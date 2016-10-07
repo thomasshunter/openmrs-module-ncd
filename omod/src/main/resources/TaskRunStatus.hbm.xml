@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2008 7:12:14 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.openmrs.module.ncd.database.TaskRunStatus" table="ncd_task_run_status">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="task" class="org.openmrs.scheduler.TaskDefinition" fetch="select">
+            <column name="task_id" not-null="true" />
+        </many-to-one>
+        <property name="started" type="timestamp">
+            <column name="started" not-null="true" />
+        </property>
+        <property name="ended" type="timestamp">
+            <column name="ended" not-null="true" />
+        </property>
+        <property name="first" type="java.lang.Long">
+            <column name="first" not-null="false" />
+        </property>
+        <property name="last" type="java.lang.Long">
+            <column name="last" not-null="false" />
+        </property>
+        <property name="succeeded" type="boolean">
+            <column name="succeeded" not-null="true" />
+        </property>
+        <property name="message" type="string">
+            <column name="message" length="65535" not-null="true" />
+        </property>
+        <set name="exportedResults" inverse="true">
+            <key>
+                <column name="taskRunStatusId" not-null="true" />
+            </key>
+            <one-to-many class="org.openmrs.module.ncd.database.ExportedResult" />
+        </set>
+        <set name="exportRecipients" inverse="true">
+            <key>
+                <column name="taskRunStatusId" not-null="true" />
+            </key>
+            <one-to-many class="org.openmrs.module.ncd.database.ExportRecipient" />
+        </set>
+    </class>
+</hibernate-mapping>

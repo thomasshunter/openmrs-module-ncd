@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2008 7:12:14 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.openmrs.module.ncd.database.CodeFrequency" table="ncd_code_frequency">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="application" type="string">
+            <column name="application" length="65535" not-null="true" />
+        </property>
+        <property name="facility" type="string">
+            <column name="facility" length="65535" not-null="true" />
+        </property>
+        <property name="location" type="string">
+            <column name="location" length="65535" not-null="true" />
+        </property>
+        <property name="code" type="string">
+            <column name="loinccode" length="65535" not-null="true" />
+        </property>
+        <property name="codeSystem" type="string">
+            <column name="codesystem" length="65535" not-null="true" />
+        </property>
+        <property name="patientZipCode" type="string">
+            <column name="patientzipcode" length="65535" />
+        </property>
+        <property name="instituteZipCode" type="string">
+            <column name="institutezipcode" length="65535" />
+        </property>
+        <property name="doctorZipCode" type="string">
+            <column name="doctorzipcode" length="65535" />
+        </property>
+        <property name="date" type="date">
+            <column name="countdate" length="10" not-null="true" />
+        </property>
+        <property name="count" type="long">
+            <column name="instances" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

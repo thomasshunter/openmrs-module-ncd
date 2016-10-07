@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2008 7:12:14 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.openmrs.module.ncd.database.NlpCriticContextGroup"
+    		table="ncd_nlp_context_group">
+    	<id name="id" type="java.lang.Long">
+    		<column name="id" />
+    		<generator class="identity" />
+    	</id>    	
+    	<property name="displayText" type="string">
+    		<column name="displayText" length="16" not-null="true"/>
+    	</property>
+    </class>
+</hibernate-mapping>

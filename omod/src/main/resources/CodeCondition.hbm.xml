@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2008 7:12:14 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.openmrs.module.ncd.database.CodeCondition" table="ncd_code_condition">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="condition" 
+        	class="org.openmrs.module.ncd.database.Condition" 
+        	fetch="select"
+        	lazy="false">
+            <column name="conditionnameid" not-null="true" />
+        </many-to-one>
+        <property name="conditionIndicator" type="string">
+            <column name="conditionindicator" length="65535" />
+        </property>
+        <many-to-one name="code" class="org.openmrs.module.ncd.database.Code" 
+        	fetch="select" lazy="false">
+            <column name="codeid" not-null="true" />
+        </many-to-one>
+        <set name="reportingCriteria" inverse="true">
+            <key>
+                <column name="loinccodeid" not-null="true" />
+            </key>
+            <one-to-many class="org.openmrs.module.ncd.database.ReportingCriterion" />
+        </set>
+        <set name="reportableResults" inverse="true">
+            <key>
+                <column name="loinccodeid" />
+            </key>
+            <one-to-many class="org.openmrs.module.ncd.database.ReportableResult" />
+        </set>
+    </class>
+</hibernate-mapping>

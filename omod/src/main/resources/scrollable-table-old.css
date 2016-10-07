@@ -1,0 +1,41 @@
+/* 
+ * This version is no longer used. It only works in FireFox.
+ * It's here just in case we need to revert.
+ */
+
+div.scrollWrapper {
+	float:left;
+	overflow:visible !important;
+	overflow:scroll;
+	/*height:500px;*/
+}
+
+table.scrollable {
+	/*width:100%;*/
+	margin-right:0 !important;
+	margin-right:16px;
+	border-collapse:separate;
+}
+
+table.scrollable th {
+	/*border-top:1px solid #999999;*/
+	/*border-left:1px solid #999999;*/
+	/*border-bottom:1px solid #999999;*/
+	padding:5px;
+	/*background:#f7f7f7;*/
+	position: relative;
+}
+
+table.scrollable tbody {
+	overflow:auto;
+}
+
+table.scrollable tr {
+	height:0px;
+}
+
+table.scrollable td {
+	/*border-left:1px solid #999999;*/
+	/*border-bottom:1px solid #999999;*/
+	/*text-align:center;*/
+}

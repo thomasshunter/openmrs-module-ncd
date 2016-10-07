@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2008 7:12:14 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.openmrs.module.ncd.database.HL7Producer" table="ncd_hl7_producer">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="description" type="string">
+            <column name="description" length="65535" not-null="false" />
+        </property>
+        <many-to-one name="institution" class="org.openmrs.module.ncd.database.Institution" fetch="select">
+            <column name="institutionid" not-null="true" />
+        </many-to-one>
+        <property name="applicationname" type="string">
+            <column name="applicationname" length="65535" not-null="true" />
+        </property>
+        <property name="facilityname" type="string">
+            <column name="facilityname" length="65535" not-null="true" />
+        </property>
+        <property name="locationname" type="string">
+            <column name="locationname" length="40" not-null="false" />
+        </property>
+        <property name="reportall" type="boolean">
+            <column name="reportall" not-null="true" />
+        </property>
+        <property name="excluded" type="boolean">
+            <column name="excluded" not-null="true" />
+        </property>
+        <property name="retired" type="boolean">
+            <column name="retired" not-null="true" />
+        </property>
+        <property name="ignored" type="boolean">
+            <column name="ignored" not-null="true" />
+        </property>
+        <set name="reportableResults" inverse="true">
+            <key>
+                <column name="applicationfacilityid" />
+            </key>
+            <one-to-many class="org.openmrs.module.ncd.database.ReportableResult" />
+        </set>
+    </class>
+</hibernate-mapping>

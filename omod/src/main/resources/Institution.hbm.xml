@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2008 7:12:14 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.openmrs.module.ncd.database.Institution" table="ncd_institution">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>        
+        <property name="name" type="string">
+        	<column name="name" length="65535" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="65535" />
+        </property>
+        <property name="addressline1" type="string">
+            <column name="addressline1" length="65535" />
+        </property>
+        <property name="addressline2" type="string">
+            <column name="addressline2" length="65535" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="65535" />
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="2" />
+        </property>
+        <property name="zip" type="string">
+            <column name="zip" length="65535" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="65535" />
+        </property>
+        <property name="www" type="string">
+            <column name="www" length="65535" />
+        </property>
+        <property name="retired" type="boolean">
+            <column name="retired" not-null="true" />
+        </property>
+        <set name="producers" inverse="true">
+            <key>
+                <column name="institutionid" not-null="true" />
+            </key>
+            <one-to-many class="org.openmrs.module.ncd.database.HL7Producer" />
+        </set>
+        <set name="reportableResults" inverse="true">
+            <key>
+                <column name="institutionid" />
+            </key>
+            <one-to-many class="org.openmrs.module.ncd.database.ReportableResult" />
+        </set>
+    </class>
+</hibernate-mapping>

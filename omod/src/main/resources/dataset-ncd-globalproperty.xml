@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <global_property property="ncd.allowableMessageTypes" property_value="ORUR01,ORUR03,ADTA01" description="The comma separated list of HL7 message types to accepted by the
+MessageTypeCritic (if used)."/>
+  <global_property property="ncd.allowableProcessingIds" property_value="P" description="The comma separated list of processing ids to be accepted by the
+ProcessingIdCritic (if used)."/>
+  <global_property property="ncd.candidateSegmentNames" property_value="OBX,DG1" description="The comma separated list of HL7 message segment names the CandidateResultFinder will scan for candidate results."/>
+  <global_property property="ncd.conceptVersion" property_value="1.1" description="DO NOT MODIFY.  The current installed version of the module specific concepts."/>
+  <global_property property="ncd.enableNTEprocessing" property_value="false" description="True to enable NTE segment processing, false to disable it."/>
+  <global_property property="ncd.listenerPort" property_value="7093" description="The TCP port to which the HL7 message processor should listen for
+incoming connections."/>
+  <global_property property="ncd.loincFrequencyCacheSize" property_value="25000" description="The maximum size of the (loinc, facility) frequency cache."/>
+  <global_property property="ncd.matchThreshold" property_value="80" description="The longest common substring matching threshold, as a percentage."/>
+  <global_property property="ncd.messageCritics" property_value="" description="The comma separated list of message critic class names to be loaded."/>
+  <global_property property="ncd.messagePreProcessors" property_value="org.openmrs.module.ncd.preprocessing.MakeValidMSH9,org.openmrs.module.ncd.preprocessing.RemoveFourLetterSegmentNames,org.openmrs.module.ncd.preprocessing.MPQGenerator,org.openmrs.module.ncd.preprocessing.ChangeOBX2DataTypeFromRPToST,org.openmrs.module.ncd.preprocessing.FixBareNte,org.openmrs.module.ncd.preprocessing.TransformEmbeddedCarriageReturns" description="The comma-separated list of MessagePreProcessor classes that will be used to pre-process the message to do all that is possible to ensure the message can be parsed."/>
+  <global_property property="ncd.negationStrings" property_value="NO,NOT,NEG,NEGATIVE,NORMAL,INTERMEDIATE" description="The comma separated list of negation strings to search for in test results to
+indicate a negative result."/>
+  <global_property property="ncd.nlpAnalyzers" property_value="text=org.openmrs.module.ncd.nlp.NlpTextAnalyzer,discrete=org.openmrs.module.ncd.nlp.NlpDiscreteAnalyzer,numeric=org.openmrs.module.ncd.nlp.NlpNumericAnalyzer" description="The name of the analyzer class used by RexCritic."/>
+  <global_property property="ncd.notReportableAbnormalFlags" property_value="" description="The comma separated list of non-reportable abnormal result flags (OBX.8) used
+by the AbnormalFlagCritic, if it is used."/>
+  <global_property property="ncd.password" property_value="test" description="The password of the user as whom the NCD processor will run."/>
+  <global_property property="ncd.reportableAbnormalFlags" property_value="A,AA,H,HH" description="The comma separated list of reportable abnormal result flags (OBX.8) used by
+the AbnormalFlagCritic, if it is used. Reportable flags always override
+not-reportable flags.  So if a flag appears in both lists, it will be reported."/>
+  <global_property property="ncd.resultFinderMap" property_value="InterestingResultFinder=org.openmrs.module.ncd.InterestingResultFinder" description="The comma separated list of name=class name pairs to be loaded as result finders."/>
+  <global_property property="ncd.resultsCritics" property_value="org.openmrs.module.ncd.critic.NlpCritic" description="The comma separated list of results critic class names to be loaded."/>
+  <global_property property="ncd.started" property_value="true" description="DO NOT MODIFY. true/false whether or not the ncd module has been started.  This is used to make sure modules that were running  prior to a restart are started again"/>
+  <global_property property="ncd.username" property_value="admin" description="The name of the user as whom the NCD processor will run."/>
+</dataset>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.openmrs.module.ncd.database.MessageCountSummary" table="ncd_message_count_summary">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="processedDate" type="date">
+            <column name="processeddate" length="10" />
+        </property>
+        <property name="potentiallyReportable" type="int">
+            <column name="potentiallyreportable" not-null="true"/>
+        </property>
+        <property name="decidedResultPositive" type="int">
+            <column name="decidedresultpositive" not-null="true"/>
+        </property>
+        <property name="decidedResultNegative" type="int">
+            <column name="decidedresultnegative" not-null="true"/>
+        </property>
+        <property name="criticPositive" type="int">
+            <column name="criticpositive" not-null="true"/>
+        </property>
+        <property name="criticNegative" type="int">
+            <column name="criticnegative" not-null="true"/>
+        </property>
+        <property name="indeterminate" type="int">
+            <column name="indeterminate" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

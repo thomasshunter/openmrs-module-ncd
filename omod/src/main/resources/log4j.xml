@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<!-- NOTE: apparently the module log4j.xml is not intended to be a complete instance.
+     Instead, it just lists the changes to the configuration you want to make for your
+     module. Therefore, it needs to "tread lightly." (ehorstkotte) -->
+     
+<!-- NOTE: don't add the X appender to a logger and an ancestor,
+     or you'll get duplicate outputs to X -->
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <!-- The below appends to standard out, which is less than desirable in most cases. Use the logfile appender wherever possible.-->  
+    <appender name="stdout" class="org.apache.log4j.ConsoleAppender"> 
+        <layout class="org.apache.log4j.PatternLayout"> 
+            <param name="ConversionPattern" value="%p - %C{1}.%M(%L) |%d{ISO8601}| %m%n"/> 
+        </layout> 
+    </appender>
+
+    <appender name="logfile" class="org.apache.log4j.RollingFileAppender">
+        <param name="File"              value="/var/log/openmrs/openmrs.log"/> 
+        <param name="Append"            value="true"/>
+        <param name="MaxFileSize"       value="2MB"/>
+        <param name="MaxBackupIndex"    value="100"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%p - %C{1}.%M(%L) |%d{ISO8601}| %m%n"/> 
+        </layout>
+    </appender>
+  
+    <appender name="ncd" class="org.openmrs.module.ncd.monitor.SystemActivityAppender"/>
+
+    <logger name="org.openmrs.module.ncd">
+        <level value="WARN"/>
+        <appender-ref ref="stdout"/>
+        <appender-ref ref="logfile"/>     	
+        <appender-ref ref="ncd"/>
+    </logger>
+
+    <logger name="org.openmrs.module.ncd.NCDServer">
+        <level value="WARN"/>
+    </logger>
+
+    <logger name="org.openmrs.module.ncd.database.dao.hibernate.CodeFrequencyDAO">
+        <level value="WARN"/>
+    </logger>
+
+    <logger name="org.openmrs.module.ncd.database.ResultStorageHelper">
+        <level value="DEBUG"/>
+        <appender-ref ref="logfile"/>
+    </logger>
+
+    <logger name="org.openmrs.module.ncd.storage.ReportableResult">
+        <level value="DEBUG"/>
+        <appender-ref ref="logfile"/>
+    </logger>
+    
+    <logger name="org.openmrs.module.ncd.CandidateResultFinder">
+        <level value="WARN"/>
+    </logger>
+
+    <logger name="org.openmrs.module.ncd.web.tags">
+        <level value="WARN"/>
+    </logger>
+    
+    <logger name="org.hibernate.util.JDBCExceptionReporter">
+        <level value="WARN"/>
+        <appender-ref ref="stdout"/>
+        <appender-ref ref="logfile"/>     	
+        <appender-ref ref="ncd"/>
+    </logger>
+  
+    <logger name="org.hibernate.SQL">
+        <level value="WARN"/>
+        <appender-ref ref="stdout"/>
+        <appender-ref ref="logfile"/>
+        <appender-ref ref="ncd"/>
+    </logger>
+  
+    <root>
+        <level value="DEBUG"/>
+        <appender-ref ref="stdout"/>
+        <appender-ref ref="logfile"/>
+        <appender-ref ref="ncd"/>
+    </root>
+  
+</log4j:configuration>

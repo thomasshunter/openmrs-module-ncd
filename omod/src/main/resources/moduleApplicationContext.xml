@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!-- Beans to add to the current Application context definition -->
+  
+<beans>
+    <bean id="ncdUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+				<prop key="/module/@MODULE_ID@/alertList.form">getNcdAlertListForm</prop>
+				<prop key="/module/@MODULE_ID@/codeDetail.form">getNcdCodeDetailForm</prop>
+				<prop key="/module/@MODULE_ID@/codeList.form">getNcdCodeListForm</prop>
+				<prop key="/module/@MODULE_ID@/codeSystemDetail.form">getNcdCodeSystemDetailForm</prop>
+				<prop key="/module/@MODULE_ID@/codeSystemList.form">getNcdCodeSystemListForm</prop>
+				<prop key="/module/@MODULE_ID@/codeTypeDetail.form">getNcdCodeTypeDetailForm</prop>
+				<prop key="/module/@MODULE_ID@/codeTypeList.form">getNcdCodeTypeListForm</prop>
+				<prop key="/module/@MODULE_ID@/conceptImport.form">getNcdConceptImportForm</prop>
+				<prop key="/module/@MODULE_ID@/conditionDetail.form">getNcdConditionDetailForm</prop>
+				<prop key="/module/@MODULE_ID@/conditionGroupDetail.form">getNcdConditionGroupDetailForm</prop>
+				<prop key="/module/@MODULE_ID@/conditionList.form">getNcdConditionListForm</prop>
+				<prop key="/module/@MODULE_ID@/contextList.form">getNcdContextListForm</prop>
+				<prop key="/module/@MODULE_ID@/contextTypeDetail.form">getNcdContextTypeDetailForm</prop>
+				<prop key="/module/@MODULE_ID@/contextTypeList.form">getNcdContextTypeListForm</prop>
+				<prop key="/module/@MODULE_ID@/criticDetail.form">getNcdCriticDetailForm</prop>
+				<prop key="/module/@MODULE_ID@/criticList.form">getNcdCriticListForm</prop>
+				<prop key="/module/@MODULE_ID@/dashboard.form">getNcdDashboardForm</prop>
+				<prop key="/module/@MODULE_ID@/debug.form">getNcdDebugForm</prop>
+				<prop key="/module/@MODULE_ID@/decidedResultDetail.form">getNcdDecidedResultDetailForm</prop>
+				<prop key="/module/@MODULE_ID@/decidedResultList.form">getNcdDecidedResultListForm</prop>
+				<prop key="/module/@MODULE_ID@/discreteTermList.form">getNcdDiscreteTermListForm</prop>
+				<prop key="/module/@MODULE_ID@/errorDetail.form">getNcdErrorDetailForm</prop>
+				<prop key="/module/@MODULE_ID@/errorList.form">getNcdErrorListForm</prop>
+				<prop key="/module/@MODULE_ID@/institutionDetail.form">getNcdInstitutionDetailForm</prop>
+				<prop key="/module/@MODULE_ID@/institutionList.form">getNcdInstitutionListForm</prop>
+				<prop key="/module/@MODULE_ID@/producerDetail.form">getNcdProducerDetailForm</prop>
+				<prop key="/module/@MODULE_ID@/producerList.form">getNcdProducerListForm</prop>
+				<prop key="/module/@MODULE_ID@/reportableResultDetail.form">getNcdReportableResultDetailForm</prop>
+				<prop key="/module/@MODULE_ID@/reportableResultList.form">getNcdReportableResultListForm</prop>
+				<prop key="/module/@MODULE_ID@/reportList.form">getNcdReportListForm</prop>
+				<prop key="/module/@MODULE_ID@/report.form">getNcdReportForm</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- JLB 1/7/09 The '@MODULE_PACKAGE@' substitution has been replaced here because it causes errors
+	     when running the JUnit tests.  Submitting a bug to OpenMRS about this. We'll want to fix this
+	     when possible. -->
+	<bean id="getNcdAlertListForm" class="org.openmrs.module.ncd.web.controller.AlertListFormController">
+		<property name="sessionForm"><value>true</value></property>
+		<property name="commandName"><value>getNcdAlertListObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/alertList</value></property>
+		<property name="successView"><value>alertList.form</value></property>
+		<property name="formAttributeName"><value>alertList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdCodeDetailForm" class="org.openmrs.module.ncd.web.controller.CodeDetailFormController">
+		<property name="commandName"><value>getNcdCodeDetailObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/codeDetail</value></property>
+		<property name="successView"><value>codeList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdCodeListForm" class="org.openmrs.module.ncd.web.controller.CodeListFormController">
+		<property name="commandName"><value>getNcdCodeListObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/codeList</value></property>
+		<property name="successView"><value>codeList.form</value></property>
+		<property name="formAttributeName"><value>codeList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdCodeSystemDetailForm" class="org.openmrs.module.ncd.web.controller.CodeSystemDetailFormController">
+		<property name="commandName"><value>getNcdCodeSystemDetailObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/codeSystemDetail</value></property>
+		<property name="successView"><value>codeSystemList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdCodeSystemListForm" class="org.openmrs.module.ncd.web.controller.CodeSystemListFormController">
+		<property name="commandName"><value>getNcdCodeSystemListObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/codeSystemList</value></property>
+		<property name="successView"><value>codeSystemList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdCodeTypeDetailForm" class="org.openmrs.module.ncd.web.controller.CodeTypeDetailFormController">
+		<property name="commandName"><value>getNcdCodeTypeDetailObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/codeTypeDetail</value></property>
+		<property name="successView"><value>codeTypeList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdCodeTypeListForm" class="org.openmrs.module.ncd.web.controller.CodeTypeListFormController">
+		<property name="commandName"><value>getNcdCodeTypeListObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/codeTypeList</value></property>
+		<property name="successView"><value>codeTypeList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdConceptImportForm" class="org.openmrs.module.ncd.web.controller.ConceptImportFormController">
+		<property name="commandName"><value>getNcdConceptImportObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/criticList</value></property>
+		<property name="successView"><value>criticList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdConditionDetailForm" class="org.openmrs.module.ncd.web.controller.ConditionDetailFormController">
+		<property name="commandName"><value>getNcdConditionDetailObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/conditionDetail</value></property>
+		<property name="successView"><value>conditionList.form</value></property>
+		<property name="formAttributeName"><value>conditionDetail.form</value></property>
+	</bean>
+	
+	<bean id="getNcdConditionGroupDetailForm" class="org.openmrs.module.ncd.web.controller.ConditionGroupDetailFormController">
+		<property name="commandName"><value>getNcdConditionGroupDetailObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/conditionGroupDetail</value></property>
+		<property name="successView"><value>conditionList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdConditionListForm" class="org.openmrs.module.ncd.web.controller.ConditionListFormController">
+		<property name="commandName"><value>getNcdConditionListObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/conditionList</value></property>
+		<property name="successView"><value>conditionList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdContextListForm" class="org.openmrs.module.ncd.web.controller.ContextListFormController">
+		<property name="commandName"><value>getNcdContextListObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/contextList</value></property>
+		<property name="successView"><value>contextTypeList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdContextTypeDetailForm" class="org.openmrs.module.ncd.web.controller.ContextTypeDetailFormController">
+		<property name="commandName"><value>getNcdContextTypeDetailObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/contextTypeDetail</value></property>
+		<property name="successView"><value>contextTypeList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdContextTypeListForm" class="org.openmrs.module.ncd.web.controller.ContextTypeListFormController">
+		<property name="commandName"><value>getNcdContextTypeListObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/contextTypeList</value></property>
+		<property name="successView"><value>contextTypeList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdCriticDetailForm" class="org.openmrs.module.ncd.web.controller.CriticDetailFormController">
+		<property name="commandName"><value>getNcdCriticDetailObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/criticDetail</value></property>
+		<property name="successView"><value>criticList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdCriticListForm" class="org.openmrs.module.ncd.web.controller.CriticListFormController">
+		<property name="commandName"><value>getNcdCriticListObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/criticList</value></property>
+		<property name="successView"><value>criticList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdDashboardForm" class="org.openmrs.module.ncd.web.controller.DashboardFormController">
+		<property name="commandName"><value>getNcdDashboardObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/dashboard</value></property>
+		<property name="successView"><value>dashboard.form</value></property>
+		<property name="formAttributeName"><value>dashboard.form</value></property>
+	</bean>
+	
+	<bean id="getNcdDebugForm" class="org.openmrs.module.ncd.web.controller.DebugFormController">
+		<property name="commandName"><value>getNcdDebugObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/debug</value></property>
+		<property name="successView"><value>debug.form</value></property>
+	</bean>
+	
+	<bean id="getNcdDecidedResultDetailForm" class="org.openmrs.module.ncd.web.controller.DecidedResultDetailFormController">
+		<property name="commandName"><value>getNcdDecidedResultDetailObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/decidedResultDetail</value></property>
+		<property name="successView"><value>decidedResultList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdDecidedResultListForm" class="org.openmrs.module.ncd.web.controller.DecidedResultListFormController">
+		<property name="commandName"><value>getNcdDecidedResultListObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/decidedResultList</value></property>
+		<property name="successView"><value>decidedResultList.form</value></property>
+		<property name="formAttributeName"><value>decidedResultList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdDiscreteTermListForm" class="org.openmrs.module.ncd.web.controller.DiscreteTermListFormController">
+		<property name="sessionForm"><value>true</value></property>
+		<property name="commandName"><value>getNcdDiscreteTermListObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/discreteTermList</value></property>
+		<property name="successView"><value>discreteTermList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdErrorDetailForm" class="org.openmrs.module.ncd.web.controller.ErrorDetailFormController">
+		<property name="commandName"><value>getNcdErrorDetailObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/errorDetail</value></property>
+		<property name="successView"><value>errorList.form</value></property>
+		<property name="formAttributeName"><value>errorDetail.form</value></property>
+	</bean>
+	
+	<bean id="getNcdErrorListForm" class="org.openmrs.module.ncd.web.controller.ErrorListFormController">
+		<property name="commandName"><value>getNcdErrorListObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/errorList</value></property>
+		<property name="successView"><value>errorList.form</value></property>
+		<property name="formAttributeName"><value>errorList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdInstitutionDetailForm" class="org.openmrs.module.ncd.web.controller.InstitutionDetailFormController">
+		<property name="sessionForm"><value>true</value></property>
+		<property name="commandName"><value>getNcdInstitutionDetailObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/institutionDetail</value></property>
+		<property name="successView"><value>institutionList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdInstitutionListForm" class="org.openmrs.module.ncd.web.controller.InstitutionListFormController">
+		<property name="commandName"><value>getNcdInstitutionListObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/institutionList</value></property>
+		<property name="successView"><value>institutionList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdProducerDetailForm" class="org.openmrs.module.ncd.web.controller.ProducerDetailFormController">
+		<property name="sessionForm"><value>true</value></property>
+		<property name="commandName"><value>getNcdProducerDetailObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/producerDetail</value></property>
+		<property name="successView"><value>producerList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdProducerListForm" class="org.openmrs.module.ncd.web.controller.ProducerListFormController">
+		<property name="sessionForm"><value>true</value></property>
+		<property name="commandName"><value>getNcdProducerListObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/producerList</value></property>
+		<property name="successView"><value>producerList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdReportableResultDetailForm" class="org.openmrs.module.ncd.web.controller.ReportableResultDetailFormController">
+		<property name="commandName"><value>getNcdReportableResultDetailObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/reportableResultDetail</value></property>
+		<property name="successView"><value>reportableResultList.form</value></property>
+		<property name="listView"><value>/module/@MODULE_ID@/reportableResultList.form</value></property>
+		<property name="formAttributeName"><value>reportableResultDetail.form</value></property>
+	</bean>
+	
+	<bean id="getNcdReportableResultListForm" class="org.openmrs.module.ncd.web.controller.ReportableResultListFormController">
+		<property name="sessionForm"><value>true</value></property>
+		<property name="commandName"><value>getNcdReportableResultListObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/reportableResultList</value></property>
+		<property name="successView"><value>reportableResultList.form</value></property>
+		<property name="detailView"><value>/module/@MODULE_ID@/reportableResultDetail.form</value></property>
+		<property name="formAttributeName"><value>reportableResultList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdReportListForm" class="org.openmrs.module.ncd.web.controller.ReportListFormController">
+		<property name="commandName"><value>getNcdReportListObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/reportList</value></property>
+		<property name="successView"><value>reportList.form</value></property>
+	</bean>
+	
+	<bean id="getNcdReportForm" class="org.openmrs.module.ncd.web.controller.ReportFormController">
+		<property name="sessionForm"><value>true</value></property>
+		<property name="commandName"><value>getNcdReportObj</value></property>
+		<property name="formView"><value>/module/@MODULE_ID@/report</value></property>
+		<property name="successView"><value>reportList.form</value></property>
+	</bean>
+	
+	<bean parent="serviceContext">
+		<property name="moduleService">
+	   		<list>
+				<value>org.openmrs.module.ncd.ConditionDetectorService</value> 
+				<bean class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+					<property name="transactionManager"><ref bean="transactionManager"/></property>
+					<property name="target">
+						<bean class="org.openmrs.module.ncd.impl.ConditionDetectorServiceImpl">
+							<property name="producerDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.ProducerDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="codeConditionDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.CodeConditionDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="codeFrequencyDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.CodeFrequencyDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="decidedResultDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.DecidedResultDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="errorDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.ErrorDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="rawMessageDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.RawMessageDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="reportableResultDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.ReportableResultDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="institutionDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.InstitutionDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="nlpCriticContextDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.NlpCriticContextDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="nlpCriticConceptDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.NlpCriticConceptDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="reportingDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.ReportingDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="extractDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.ExtractDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="conditionDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.ConditionDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="taskStatusDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.TaskStatusDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="zipcodeDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.ZipcodeDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+								</bean>
+							</property>
+							<property name="countyDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.CountyDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+								</bean>
+							</property>
+							<property name="jurisdictionDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.JurisdictionDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+								</bean>
+							</property>
+							<property name="alertSummaryDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.AlertSummaryDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="rateMonitoringDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.RateMonitoringDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="codeDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.CodeDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="criticDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.CriticDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+								</bean>
+							</property>
+							<property name="messageCountSummaryDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.MessageCountSummaryDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="systemActivityDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.SystemActivityDAO" />
+							</property>
+							<property name="reviewStatusDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.ReviewStatusDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="exportedResultDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.ExportedResultDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="exportRecipientDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.ExportRecipientDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="nlpDiscreteTermDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.NlpDiscreteTermDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="dataSourceReportDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.DataSourceReportDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+							<property name="processedMessageCountDAO">
+								<bean class="org.openmrs.module.ncd.database.dao.hibernate.ProcessedMessageCountDAO">
+									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
+								</bean>
+							</property>
+						</bean>
+					</property>
+					<property name="preInterceptors">
+						<list>
+							<ref bean="authorizationInterceptor"/>
+						</list>
+					</property>
+					<property name="transactionAttributeSource">
+						<bean class="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource"/>
+					</property>
+				</bean>
+		   </list>
+		</property>
+    </bean>
+</beans>
