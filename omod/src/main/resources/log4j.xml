@@ -33,7 +33,6 @@
         <level value="WARN"/>
         <appender-ref ref="stdout"/>
         <appender-ref ref="logfile"/>     	
-        <appender-ref ref="ncd"/>
     </logger>
 
     <logger name="org.openmrs.module.ncd.NCDServer">
@@ -45,12 +44,12 @@
     </logger>
 
     <logger name="org.openmrs.module.ncd.database.ResultStorageHelper">
-        <level value="DEBUG"/>
+        <level value="INFO"/>
         <appender-ref ref="logfile"/>
     </logger>
 
     <logger name="org.openmrs.module.ncd.storage.ReportableResult">
-        <level value="DEBUG"/>
+        <level value="INFO"/>
         <appender-ref ref="logfile"/>
     </logger>
     
@@ -77,7 +76,7 @@
     </logger>
   
     <root>
-        <level value="DEBUG"/>
+        <level value="INFO"/>
         <appender-ref ref="stdout"/>
         <appender-ref ref="logfile"/>
         <appender-ref ref="ncd"/>

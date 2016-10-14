@@ -74,6 +74,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
+import ca.uhn.hl7v2.model.DataTypeException;
 import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.util.Terser;
@@ -267,7 +268,8 @@ public class ResultStorageHelper
             
             buf.append(thisResult.getConditionName());
             
-            ResultStorageHelper.log.info( thisResult.diagnosticOutput() );
+            ResultStorageHelper.log.debug( thisResult.diagnosticOutput() ); // For some reason I can't determine, this will not print.
+            System.err.println( thisResult.diagnosticOutput() ); 
         }
         
         log.info("**Positive** msg mpq#" + mpqnum + " has reportable results: " + buf.toString());
@@ -1669,15 +1671,14 @@ public class ResultStorageHelper
    {
        Message parsedMessage    = null;
        String phone             = null;
-       String replacement       = "";
-       boolean foundPhoneNumber = true;
+       boolean foundError       = true;
        int beforePhone          = -1;
        int afterPhonePID13      = -1;
        int afterPhoneORC14      = -1;
        int beforeDatetimeOBR34  = -1;
        int afterDatetimeOBR34   = -1;
        
-       while( foundPhoneNumber )
+       while( foundError )
        {
            try
            {
@@ -1697,14 +1698,12 @@ public class ResultStorageHelper
                }
                else if( beforeDatetimeOBR34 > -1 && afterDatetimeOBR34 > -1 )
                {
-                   String badValue      = exceptionText.substring( beforeDatetimeOBR34 + ResultStorageHelper.MARKER_BAD_DATETIME_PART1.length(), afterDatetimeOBR34 );
-                   messageText          = messageText.replaceAll( badValue, "" ); 
-                   PipeParser parser    = new PipeParser();
-                   parsedMessage        = parser.parse( messageText );
-                   
-                   // Convenience
-                   phone                = null;
-                   foundPhoneNumber     = false;
+                   phone = exceptionText.substring( beforeDatetimeOBR34 + ResultStorageHelper.MARKER_BAD_DATETIME_PART1.length(), afterDatetimeOBR34 );
+               }
+               else
+               {
+                   foundError = false;
+                   continue;
                }
 
                int numberOfPhoneDigits  = -1;
@@ -1712,40 +1711,43 @@ public class ResultStorageHelper
                if( phone != null )
                {
                    phone                = phone.trim().replaceAll( "'", "" );
-                   replacement          = "";
                    numberOfPhoneDigits  = phone.length();
                }
                    
-               if( numberOfPhoneDigits == 10 )
+               if( numberOfPhoneDigits == 10 ) // This is just a raw phone number--get rid of it.
                {
-                   String areaCode  = phone.substring( 0, 3 );
-                   String exchange  = phone.substring( 3, 6 );
-                   String number    = phone.substring( 6, phone.length() ); 
-               
-                   replacement = "(" + areaCode + ")" + exchange + "-" + number;
+                   messageText          = messageText.replaceAll( phone, "" ); 
+                   PipeParser parser    = new PipeParser();
+                   parsedMessage        = parser.parse( messageText );
                }
-               else if( numberOfPhoneDigits == 12 )
+               else if( numberOfPhoneDigits == 12 ) // This one may contain parentheses, so we need to escape them for the regex to work.
                {
                    int indexOfOpenParen     = phone.indexOf( "(" );
                    int indexOfCloseParen    = phone.indexOf( ")" );
                
                    if( indexOfOpenParen == 0 && indexOfCloseParen == 4 )
-                   {                   
-                       String areaCode  = phone.substring( 0, 4 );
-                       String exchange  = phone.substring( 5, 8 );
-                       String number    = phone.substring( 8, phone.length() ) ;
-                       replacement      = areaCode + exchange + "-" + number;    
-                   
-                       phone            = "\\" + phone.substring( 0, 4 ) + "\\)"; // Escaping for open parenthesis for RegEx
+                   {                                      
+                       phone = "\\" + phone.substring( 0, 4 ) + "\\)"; // Escaping for open parenthesis for RegEx
                    }
+                   
+                   messageText          = messageText.replaceAll( phone, "" ); 
+                   PipeParser parser    = new PipeParser();
+                   parsedMessage        = parser.parse( messageText );
                }
                else if( numberOfPhoneDigits == 14 )
                {
+                   int indexOfSpace     = phone.indexOf( " " );
+                   String replacement   = null;
+                   
+                   if( indexOfSpace != -1 )
+                   {
+                       replacement = phone.replaceAll( " ", "" );
+                   }
+                   
                    phone                = "\\" + phone.substring( 0, 4 ) + "\\)" + phone.substring( 5, phone.length() ); // Escaping for open parenthesis for RegEx
-                   messageText          = messageText.replaceAll( phone, "" );
+                   messageText          = messageText.replaceAll( phone, replacement.trim() );
                    PipeParser parser    = new PipeParser();
                    parsedMessage        = parser.parse( messageText );
-                   foundPhoneNumber     = false;
                }
                else
                {
@@ -1757,6 +1759,34 @@ public class ResultStorageHelper
                                                        + "\n\tmessageText=" 
                                                        + messageText );
                }
+           }
+           catch( DataTypeException dte )
+           {
+               String dteError  = dte.getMessage();
+               int indexPhone   = dteError.indexOf( "US phone number" );
+               int indexPrimVal = dteError.indexOf( "Primitive value " );
+               int indexObr34   = dteError.indexOf( "requires to be empty or a HL7 datetime string at OBR-34" );
+                              
+               if( indexObr34 > -1 && indexPrimVal > -1 )
+               {
+                   String obr34Value    = dteError.substring( indexPrimVal + 17, indexObr34 );
+                   obr34Value           = obr34Value.replaceAll( "\\'", "").trim();
+                   messageText          = messageText.replaceAll( obr34Value, "" );
+                   PipeParser parser    = new PipeParser();
+                   
+                   try
+                   {
+                       parsedMessage    = parser.parse( messageText );
+                       foundError       = false;
+                   }
+                   catch( Exception e )
+                   {
+                       ResultStorageHelper.log.error( "ResultStorageHelper, messageText=" + messageText + ", e=" + e );
+
+                   }
+               }
+               
+               exceptionText = dte.getMessage(); // Get the next phone number.
            }
            catch( Exception e )
            {
